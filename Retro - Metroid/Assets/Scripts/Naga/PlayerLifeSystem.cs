@@ -25,8 +25,6 @@ public class PlayerLifeSystem : DamageSystem
 
         StackSystem();
 
-        LifeSystem();
-
         DeadSystem();
     }
 
