@@ -58,4 +58,11 @@ public class PlayerLifeSystem : DamageSystem
             Destroy(this.gameObject);
         }
     }
+
+    public void EnergyTank()
+    {
+        maxStack++;
+        stack++;
+        currentLife = 99;
+    }
 }
