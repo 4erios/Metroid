@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySystem : DamageSystem
+public class EnemyLifeSystem : DamageSystem
 {
     [HideInInspector]
     private int lifeMob;
