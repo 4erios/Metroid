@@ -14,7 +14,7 @@ public class EnergyTank : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().sprite = skillElement.visuObj;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Dedans");
         if (collision.gameObject.tag == "Player")
@@ -23,5 +23,4 @@ public class EnergyTank : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
