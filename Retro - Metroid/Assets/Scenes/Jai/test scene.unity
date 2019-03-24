@@ -235,9 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690c5437eb607b14d9081add4f5aed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  jumpForce: 150
-  gravity: 250
+  moveSpeed: 10
+  jumpForce: 10
+  gravity: 9.8
   isGrounded: 0
   layerGround:
     serializedVersion: 2
@@ -247,6 +247,7 @@ MonoBehaviour:
   groundRadius: 0.01
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+  inverseGravity: 0
 --- !u!1 &413783539
 GameObject:
   m_ObjectHideFlags: 0

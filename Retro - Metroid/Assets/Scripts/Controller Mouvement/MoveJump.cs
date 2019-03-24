@@ -14,6 +14,7 @@ public class MoveJump : MonoBehaviour
 
     public float moveSpeed = 40;
     public float jumpForce = 150;
+    public float jumpNextForce;
     public float gravity = 250f;
 
     [SerializeField] private bool isGrounded;
@@ -25,10 +26,13 @@ public class MoveJump : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier =  2f;
 
+    public float jumpTime = 3;
+    private float jumpTimeCounter;
+
     [SerializeField] private bool inverseGravity = false;
 
-    KeyCode JumpButton = KeyCode.Joystick1Button0;
-    KeyCode GravityButton = KeyCode.Joystick1Button1;
+    KeyCode JumpButton = KeyCode.JoystickButton0;
+    KeyCode GravityButton = KeyCode.JoystickButton1;
 
     private void Awake()
     {
@@ -43,19 +47,19 @@ public class MoveJump : MonoBehaviour
 
     private void Update()
     {
-        
+        jumpCatch();
     }
 
     private void FixedUpdate()
     {
         CheckThatGround();
-        //ThereGoesGravity();
+        
 
         Move();
         Jump();
         GravityChange();
 
-        
+        ThereGoesGravity();
     }
 
     void Move ()
@@ -64,33 +68,74 @@ public class MoveJump : MonoBehaviour
         rb.velocity = new Vector3(axeHorizontal * moveSpeed,rb.velocity.y,rb.velocity.z);
     }
 
+    /// <summary>
+    /// detecte quand le joueur appuie sur la touche de saut
+    /// </summary>
+    void jumpCatch()
+    {
+        if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
+        {
+            //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            rb.velocity = jumpForce * Vector3.up;
+            jumpTimeCounter = jumpTime;
+        }
+
+        if (Input.GetKey(JumpButton))
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector3.up * jumpNextForce;
+                jumpTimeCounter -= Time.fixedDeltaTime;
+            }
+            Debug.Log("test2");
+        }
+
+        if (Input.GetKeyUp(JumpButton))
+        {
+            jumpTimeCounter = 0;
+        }
+    }
+
+
     void Jump()
     {
         if (inverseGravity == false)
         {
-            if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
+            /*if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
             {
                 //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
                 rb.velocity = jumpForce * Vector3.up;
-            }
+                jumpTimeCounter = jumpTime;
+            }*/
 
             Debug.Log("GO");
 
-            Debug.Log("velocity " + rb.velocity);
-            Debug.Log("velocitYY " + rb.velocity.y);
+            //Debug.Log("velocity " + rb.velocity);
+            //Debug.Log("velocitYY " + rb.velocity.y);
 
             if (rb.velocity.y < 0)
             {
                 rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
                 Debug.Log("TEST000");
+                
             }
-            else if (rb.velocity.y > 0 && Input.GetKey(JumpButton))
+            /*else if (rb.velocity.y > 0 && Input.GetKey(JumpButton))
             {
                 rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
                 Debug.Log("test2");
-            }
+            }*/
 
-            Debug.Log("velocity AFTER" + rb.velocity);
+            /*if (Input.GetKey(JumpButton))
+            {
+                if (jumpTimeCounter > 0)
+                {
+                    rb.velocity = Vector3.up * jumpNextForce;
+                    jumpTimeCounter -= Time.fixedDeltaTime;
+                }
+                Debug.Log("test2");
+            }*/
+
+            //Debug.Log("velocity AFTER" + rb.velocity);
         }
         else
         { 
@@ -100,6 +145,8 @@ public class MoveJump : MonoBehaviour
             }
         }
     }
+
+
 
     void GravityChange()
     {
@@ -136,17 +183,18 @@ public class MoveJump : MonoBehaviour
                     Debug.Log("player is on ceil");
                 }
             }
+            Debug.Log("ERROR, ABORT MISSION IMEDIATLY, SAMUS!");
         }
     }
 
     void ThereGoesGravity()
     {
-        if (isGrounded == false && inverseGravity ==false)
+        if (/*isGrounded == false && */inverseGravity ==false)
         {
             //rb.AddForce(Physics.gravity, ForceMode.Acceleration);
-            //rb.AddForce(0, -gravity, 0, ForceMode.Acceleration);
-            rb.velocity = new Vector3 (rb.velocity.x, -gravity, rb.velocity.z);
-            Debug.Log("b****" + rb.velocity);
+            rb.AddForce(0, -gravity, 0, ForceMode.Force);
+            //rb.velocity = new Vector3 (rb.velocity.x, -gravity, rb.velocity.z);
+            
         }
         else if(isGrounded == false && inverseGravity == true)
         {
