@@ -31,8 +31,8 @@ public class MoveJump : MonoBehaviour
 
     [SerializeField] private bool inverseGravity = false;
 
-    KeyCode JumpButton = KeyCode.JoystickButton0;
-    KeyCode GravityButton = KeyCode.JoystickButton1;
+    public KeyCode JumpButton = KeyCode.JoystickButton0;
+    public KeyCode GravityButton = KeyCode.JoystickButton1;
 
     private void Awake()
     {
@@ -65,7 +65,8 @@ public class MoveJump : MonoBehaviour
     void Move ()
     {
         axeHorizontal = Input.GetAxis("Horizontal") ;
-        rb.velocity = new Vector3(axeHorizontal * moveSpeed,rb.velocity.y,rb.velocity.z);
+        //rb.velocity = new Vector3(axeHorizontal * moveSpeed,rb.velocity.y,rb.velocity.z);
+        rb.MovePosition(transform.position + Vector3.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -75,6 +76,7 @@ public class MoveJump : MonoBehaviour
     {
         if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
         {
+
             //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             rb.velocity = jumpForce * Vector3.up;
             jumpTimeCounter = jumpTime;
@@ -84,10 +86,10 @@ public class MoveJump : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector3.up * jumpNextForce;
+                rb.velocity = Vector3.up * jumpNextForce * Time.fixedDeltaTime;
                 jumpTimeCounter -= Time.fixedDeltaTime;
             }
-            Debug.Log("test2");
+            Debug.Log("jump");
         }
 
         if (Input.GetKeyUp(JumpButton))
