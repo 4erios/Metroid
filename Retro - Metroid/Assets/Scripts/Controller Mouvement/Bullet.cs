@@ -53,3 +53,5 @@ public class Bullet : MonoBehaviour
         }
     }
 }
+
+//https://www.raywenderlich.com/847-object-pooling-in-unity
