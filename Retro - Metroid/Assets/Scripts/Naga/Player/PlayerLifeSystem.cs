@@ -65,4 +65,9 @@ public class PlayerLifeSystem : DamageSystem
         stack++;
         currentLife = 99;
     }
+
+    public void Energy()
+    {
+        currentLife += 15;
+    }
 }
