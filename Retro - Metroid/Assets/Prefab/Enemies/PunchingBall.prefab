@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b518e9a0eceb54d852e07b9fb7f8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   stats: {fileID: 11400000, guid: cd582409262935043a3dd439769b6d45, type: 2}
-  punchingballanims: {fileID: 187212459917169309}
 --- !u!95 &187212459917169309
 Animator:
   serializedVersion: 3

@@ -2,32 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PunchingBallStateManager : MonoBehaviour
+public class PunchingBallStateManager : EnemyClass
 {
     //identification des stats
     public EnemiesBaseStats stats;
+    //private float health;
 
-
-    private float health;
-
+    EnemyClass enemyClass;
     private RuntimeAnimatorController punchingballanims;
-
-    private EnemyClass enemyfunctions;
 
 
     void Start()
     {
         //récupération des stats du scriptable
         health = stats.enemyHealthPoints;
-        punchingballanims = stats.enemyAnimator;
 
-        //récupération des fonctions de EnemyClass
-        enemyfunctions = new EnemyClass();
+        punchingballanims = stats.enemyAnimator;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        enemyfunctions.TakeDamages(health, float damage);
+       
     }
+
 }
