@@ -31,10 +31,6 @@ public class MoveJump : MonoBehaviour
 
     [SerializeField] private bool inverseGravity = false;
 
-    KeyCode JumpButton = KeyCode.JoystickButton0;
-    KeyCode GravityButton = KeyCode.JoystickButton1;
-
-    public bool clavier;
 
     private void Awake()
     {
@@ -44,12 +40,8 @@ public class MoveJump : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //rb.useGravity = false;
-        if (clavier)
-        {
-            KeyCode JumpButton = KeyCode.Space;
-            KeyCode GravityButton = KeyCode.LeftControl;
-        }
+        rb.useGravity = false;
+        
     }
 
     private void Update()
@@ -61,7 +53,6 @@ public class MoveJump : MonoBehaviour
     {
         CheckThatGround();
         
-
         Move();
         Jump();
         GravityChange();
@@ -160,7 +151,7 @@ public class MoveJump : MonoBehaviour
 
     void GravityChange()
     {
-        if (Input.GetKeyDown(GravityButton))
+        if (Input.GetButtonDown("Gravity_Belt"))
         {
             inverseGravity = !inverseGravity;
         }
