@@ -10,15 +10,8 @@ public class DamageSystem : MonoBehaviour
     protected int currentLife;
     public int readCurentLife;
 
-    //Damage taken
-    public int lifeFlux;
-
-    protected void LifeSystem()
+    public void TakeDamage(int damage)
     {
-        if (lifeFlux != 0)
-        {
-            currentLife -= lifeFlux;
-            lifeFlux = 0;
-        }
+        currentLife -= damage;
     }
 }
