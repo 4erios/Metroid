@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : ScriptableObject
 {
-    public float EnemyHealthPoints;
-    
+    public float enemyHealthPoints;
 
+    public float detectionRange; 
 }
