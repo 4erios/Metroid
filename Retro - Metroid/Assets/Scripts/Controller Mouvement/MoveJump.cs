@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 
 public class MoveJump : MonoBehaviour
 {
     //Variables
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private float axeHorizontal;
     /// private float axeVertical;
     /// 
@@ -29,6 +29,8 @@ public class MoveJump : MonoBehaviour
     public float jumpTime = 3;
     private float jumpTimeCounter;
 
+    private bool faceRight = true;
+
     [SerializeField] private bool inverseGravity = false;
 
 
@@ -39,8 +41,8 @@ public class MoveJump : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 3;
         
     }
 
@@ -54,17 +56,34 @@ public class MoveJump : MonoBehaviour
         CheckThatGround();
         
         Move();
-        Jump();
-        GravityChange();
+        //Jump();
+        //GravityChange();
 
-        ThereGoesGravity();
+        //ThereGoesGravity();
     }
+    
 
     void Move ()
     {
         axeHorizontal = Input.GetAxis("Horizontal") ;
-        //rb.velocity = new Vector3(axeHorizontal * moveSpeed,rb.velocity.y,rb.velocity.z);
-        rb.MovePosition(transform.position + Vector3.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
+        Debug.Log("Move");
+        rb.velocity = new Vector2(axeHorizontal * moveSpeed ,rb.velocity.y);
+        //rb.MovePosition(rb.position + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
+
+        if (faceRight && axeHorizontal < 0)
+        {
+            Flip();
+        }
+        else if (!faceRight && axeHorizontal > 0)
+        {
+            Flip();
+        }
+    }
+
+    void Flip ()
+    {
+        faceRight = !faceRight;
+        transform.Rotate(0, 180f, 0);
     }
 
     /// <summary>
@@ -75,22 +94,23 @@ public class MoveJump : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == false)
         {
 
-            //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-            rb.velocity = jumpForce * Vector3.up;
+            //rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb.velocity = new Vector2 (rb.velocity.x, jumpForce );
+            Debug.Log("VELO" + rb.velocity);
             jumpTimeCounter = jumpTime;
-        }
+        } 
 
         
         if (Input.GetButton("Jump"))
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector3.up * jumpNextForce ;
+                rb.velocity = Vector2.up * jumpNextForce ;
                 jumpTimeCounter -= Time.fixedDeltaTime;
             }
             Debug.Log("jump");
         }
-
+        
         if (Input.GetButtonUp("Jump"))
         {
             jumpTimeCounter = 0;
@@ -102,12 +122,7 @@ public class MoveJump : MonoBehaviour
     {
         if (inverseGravity == false)
         {
-            /*if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
-            {
-                //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-                rb.velocity = jumpForce * Vector3.up;
-                jumpTimeCounter = jumpTime;
-            }*/
+            
 
             Debug.Log("GO");
 
@@ -116,38 +131,20 @@ public class MoveJump : MonoBehaviour
 
             if (rb.velocity.y < 0)
             {
-                rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
                 Debug.Log("TEST000");
                 
             }
-            /*else if (rb.velocity.y > 0 && Input.GetKey(JumpButton))
-            {
-                rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
-                Debug.Log("test2");
-            }*/
-
-            /*if (Input.GetKey(JumpButton))
-            {
-                if (jumpTimeCounter > 0)
-                {
-                    rb.velocity = Vector3.up * jumpNextForce;
-                    jumpTimeCounter -= Time.fixedDeltaTime;
-                }
-                Debug.Log("test2");
-            }*/
-
-            //Debug.Log("velocity AFTER" + rb.velocity);
+            
         }
         else
         { 
             if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == true)
             {
-                rb.AddForce(0, -jumpForce, 0, ForceMode.Impulse);
+                rb.AddForce(new Vector2(0, -jumpForce));
             }
         }
     }
-
-
 
     void GravityChange()
     {
@@ -163,7 +160,7 @@ public class MoveJump : MonoBehaviour
 
         if (!inverseGravity)
         {
-            Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundRadius, layerGround);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundRadius, layerGround);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -175,7 +172,7 @@ public class MoveJump : MonoBehaviour
         }
         else
         {
-            Collider[] colliders = Physics.OverlapSphere(ceilCheck.position, groundRadius, layerGround);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(ceilCheck.position, groundRadius, layerGround);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -193,13 +190,41 @@ public class MoveJump : MonoBehaviour
         if (/*isGrounded == false && */inverseGravity ==false)
         {
             //rb.AddForce(Physics.gravity, ForceMode.Acceleration);
-            rb.AddForce(0, -gravity, 0, ForceMode.Force);
+            rb.AddForce(new Vector2(0, -gravity), ForceMode2D.Force);
             //rb.velocity = new Vector3 (rb.velocity.x, -gravity, rb.velocity.z);
             
         }
         else if(isGrounded == false && inverseGravity == true)
         {
-            rb.AddForce(0, gravity, 0, ForceMode.Acceleration);
+            rb.AddForce(new Vector2(0, gravity), ForceMode2D.Force);
         }
     }
 }
+
+
+
+
+/*if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
+            {
+                //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+                rb.velocity = jumpForce * Vector3.up;
+                jumpTimeCounter = jumpTime;
+            }*/
+
+/*else if (rb.velocity.y > 0 && Input.GetKey(JumpButton))
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+            Debug.Log("test2");
+        }*/
+
+/*if (Input.GetKey(JumpButton))
+{
+    if (jumpTimeCounter > 0)
+    {
+        rb.velocity = Vector3.up * jumpNextForce;
+        jumpTimeCounter -= Time.fixedDeltaTime;
+    }
+    Debug.Log("test2");
+}*/
+
+//Debug.Log("velocity AFTER" + rb.velocity);
