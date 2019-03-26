@@ -25,6 +25,20 @@ public class Player_sphere : MonoBehaviour
             Debug.Log("Je suis en boule");
         }
 
+
+        if (Input.GetAxis("Vertical") > 0.1f)
+        {
+            animator.SetTrigger("Haut");
+            Debug.Log("Je me relève");
+        }
+
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            animator.SetTrigger("Jump");
+            Debug.Log("Je voulais sauter");
+        }
+
         /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)
             {
 
