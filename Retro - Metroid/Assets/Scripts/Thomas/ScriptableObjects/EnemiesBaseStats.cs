@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : ScriptableObject
+public class EnemiesBaseStats : ScriptableObject
 {
     public float enemyHealthPoints;
 
-    public float detectionRange; 
+    public float enemyDamages;
+    public float enemyAttackRange;
+
 }
