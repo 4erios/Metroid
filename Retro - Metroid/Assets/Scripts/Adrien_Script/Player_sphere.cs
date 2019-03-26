@@ -5,20 +5,42 @@ using UnityEngine;
 public class Player_sphere : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float sphereSize;
+
+    public BoxCollider2D samus;
+    public BoxCollider2D boule;
+    public bool collision;
+    Animator animator;
 
     void Start()
     {
-        sphereSize = GetComponent<GameObject>(BoxCollider2D.size.x);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("Down"))
+        if (Input.GetAxis("Vertical") < -0.1f)
         {
-          
-
+            animator.SetTrigger("Bas");
+            Debug.Log("Je suis en boule");
         }
+
+        /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)
+            {
+
+            boule.isTrigger = true;
+            samus.isTrigger = false;
+            Debug.Log("Je redeviens Samus");
+
+        }*/
+
+
+
+    }
+
+    private void OnTriggerStay2D(Collider2D samus)
+    {
+        animator.SetBool("Collision", true);
+        Debug.Log("JE TOUCHE");
     }
 }
