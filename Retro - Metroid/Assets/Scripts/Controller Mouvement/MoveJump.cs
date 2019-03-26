@@ -31,8 +31,10 @@ public class MoveJump : MonoBehaviour
 
     [SerializeField] private bool inverseGravity = false;
 
-    public KeyCode JumpButton = KeyCode.JoystickButton0;
-    public KeyCode GravityButton = KeyCode.JoystickButton1;
+    KeyCode JumpButton = KeyCode.JoystickButton0;
+    KeyCode GravityButton = KeyCode.JoystickButton1;
+
+    public bool clavier;
 
     private void Awake()
     {
@@ -43,6 +45,11 @@ public class MoveJump : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //rb.useGravity = false;
+        if (clavier)
+        {
+            KeyCode JumpButton = KeyCode.Space;
+            KeyCode GravityButton = KeyCode.LeftControl;
+        }
     }
 
     private void Update()
@@ -74,7 +81,7 @@ public class MoveJump : MonoBehaviour
     /// </summary>
     void jumpCatch()
     {
-        if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == false)
+        if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == false)
         {
 
             //rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
@@ -82,17 +89,18 @@ public class MoveJump : MonoBehaviour
             jumpTimeCounter = jumpTime;
         }
 
-        if (Input.GetKey(JumpButton))
+        
+        if (Input.GetButton("Jump"))
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector3.up * jumpNextForce * Time.fixedDeltaTime;
+                rb.velocity = Vector3.up * jumpNextForce ;
                 jumpTimeCounter -= Time.fixedDeltaTime;
             }
             Debug.Log("jump");
         }
 
-        if (Input.GetKeyUp(JumpButton))
+        if (Input.GetButtonUp("Jump"))
         {
             jumpTimeCounter = 0;
         }
@@ -141,7 +149,7 @@ public class MoveJump : MonoBehaviour
         }
         else
         { 
-            if (Input.GetKeyDown(JumpButton) && isGrounded && inverseGravity == true)
+            if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == true)
             {
                 rb.AddForce(0, -jumpForce, 0, ForceMode.Impulse);
             }
