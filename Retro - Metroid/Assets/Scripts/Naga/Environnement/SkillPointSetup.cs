@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillPointSetup : MonoBehaviour
 {
-    public SkillPointScriptableObject skillElement;
+    public LootScriptableObject skillElement;
     private string nameObj;
     public string skillName;
 
@@ -19,7 +19,7 @@ public class SkillPointSetup : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            skillName = skillElement.skillName;
+            skillName = skillElement.nameObj;
             Destroy(gameObject);
         }
     }
