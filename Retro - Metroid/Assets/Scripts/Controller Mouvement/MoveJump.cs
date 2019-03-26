@@ -42,13 +42,15 @@ public class MoveJump : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 3;
+        rb.gravityScale = 0;
         
     }
 
     private void Update()
     {
         jumpCatch();
+        //Debug.Log("VELO" + rb.velocity);
+        Debug.Log("Ok" + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
     }
 
     private void FixedUpdate()
@@ -59,7 +61,7 @@ public class MoveJump : MonoBehaviour
         //Jump();
         //GravityChange();
 
-        //ThereGoesGravity();
+        ThereGoesGravity();
     }
     
 
@@ -68,7 +70,8 @@ public class MoveJump : MonoBehaviour
         axeHorizontal = Input.GetAxis("Horizontal") ;
         Debug.Log("Move");
         rb.velocity = new Vector2(axeHorizontal * moveSpeed ,rb.velocity.y);
-        //rb.MovePosition(rb.position + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
+        //rb.MovePosition(transform.position + (Vector3)(Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime));
+        
 
         if (faceRight && axeHorizontal < 0)
         {
@@ -96,7 +99,6 @@ public class MoveJump : MonoBehaviour
 
             //rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             rb.velocity = new Vector2 (rb.velocity.x, jumpForce );
-            Debug.Log("VELO" + rb.velocity);
             jumpTimeCounter = jumpTime;
         } 
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public Transform firePoint;
+    public GameObject bulletprefab;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,6 @@ public class Fire : MonoBehaviour
 
     void Shoot()
     {
-
+        Instantiate(bulletprefab, firePoint.position, firePoint.rotation);
     }
 }
