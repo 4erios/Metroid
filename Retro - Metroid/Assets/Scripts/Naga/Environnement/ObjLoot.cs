@@ -5,22 +5,44 @@ using UnityEngine;
 public class ObjLoot : MonoBehaviour
 {
     [SerializeField]
-    private bool energyTank = false;
-    [SerializeField]
     private bool missile = false;
+    [SerializeField]
+    private Sprite missileSprite;
     [SerializeField]
     private bool energy = false;
     [SerializeField]
+    private Sprite energySprite;
+    [SerializeField]
     private bool skill = false;
     private GameObject player;
+    private int selection; // Chiffre au hasard pour le loot
 
+    private void Start()
+    {
+        LootSelection();
+
+        if (selection == 6 || selection == 5)
+        {
+            energy = true;
+        }
+
+        else if (selection == 4)
+        {
+            missile = true;
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        SetupSprite();
+    }
 
     private void Update()
     {
         int countBool = 0;
 
-        if (energyTank)
-            countBool++;
         if (missile)
             countBool++;
         if (energy)
@@ -52,13 +74,6 @@ public class ObjLoot : MonoBehaviour
             Energy();
         else if (missile)
             Missile();
-        else if (energyTank)
-            EnergyTank();
-    }
-
-    private void EnergyTank()
-    {
-        player.gameObject.GetComponent<PlayerLifeSystem>().EnergyTank();
     }
 
     private void Missile()
@@ -74,5 +89,19 @@ public class ObjLoot : MonoBehaviour
     private void Skill()
     {
         //player.gameObject.GetComponent<PlayerLifeSystem>().unlockedSkill(this.gameObject.name);
+    }
+
+    private void SetupSprite()
+    {
+        if (energy)
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = energySprite;
+
+        else if (missile)
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = missileSprite;
+    }
+
+    private void LootSelection()
+    {
+        selection = Random.Range(0, 15);
     }
 }
