@@ -58,7 +58,7 @@ public class MoveJump : MonoBehaviour
         CheckThatGround();
         
         Move();
-        //Jump();
+        Jump();
         //GravityChange();
 
         ThereGoesGravity();
@@ -68,7 +68,7 @@ public class MoveJump : MonoBehaviour
     void Move ()
     {
         axeHorizontal = Input.GetAxis("Horizontal") ;
-        Debug.Log("Move");
+        Debug.Log("Move" + axeHorizontal);
         rb.velocity = new Vector2(axeHorizontal * moveSpeed ,rb.velocity.y);
         //rb.MovePosition(transform.position + (Vector3)(Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime));
         
