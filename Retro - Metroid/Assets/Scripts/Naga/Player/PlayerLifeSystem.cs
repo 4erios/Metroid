@@ -9,7 +9,7 @@ public class PlayerLifeSystem : DamageSystem
     [SerializeField]
     private int stack = 0;
     [HideInInspector]
-    public int readPercentStack;
+    public int readStack;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class PlayerLifeSystem : DamageSystem
 
     private void ForUIStack()
     {
-        readPercentStack = stack / 10;
+        readStack = stack;
     }
 
     private void StackSystem()
