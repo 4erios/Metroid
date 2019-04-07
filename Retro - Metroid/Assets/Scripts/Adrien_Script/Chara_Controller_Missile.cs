@@ -12,13 +12,14 @@ public class Chara_Controller_Missile : MonoBehaviour
     public float weaponRange = 5f;
     float nextFire = 0.5f;
     public float damage = 100f;
-    PlayerMovement c_movement;
+    public int missileNumber = 0;
+
 
 
 
     void Awake()
     {
-        c_movement = GetComponent<PlayerMovement>();
+      
     }
 
     // Update is called once per frame
@@ -26,20 +27,18 @@ public class Chara_Controller_Missile : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire") && Time.time > nextFire)
         {
-
-            raycastMissile(Vector2(canon), 
+            missileNumber--;
+            fireMissile();
 
         }
 
     }
 
 
-    void fire ()
+    void fireMissile ()
     {
 
-        missilePos = transform.position;
-        Vector2 2 canonPosition = new Vector2 ()
-
+        Instantiate(missilePrefab, canon.position, canon.rotation);
 
     }
 }

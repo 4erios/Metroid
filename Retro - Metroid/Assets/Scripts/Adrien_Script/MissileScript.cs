@@ -6,20 +6,29 @@ public class MissileScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float velX = 5f;
-    float velY = 0;
-    Rigidbody2D rb; 
+    public float speed = 5f;
+    public Rigidbody2D rb;
+    public int damage = 40;
+    public GameObject impactEffect;
+
 
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        rb.velocity = new Vector2(velX, velY);
+
+
+
+        
+        Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+
+
     }
-}
+
+}  
