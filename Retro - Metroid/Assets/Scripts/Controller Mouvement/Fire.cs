@@ -11,6 +11,8 @@ public class Fire : MonoBehaviour
     private IEnumerator coroutine;
     private bool shootWhenTimeEnd = false;
 
+    private GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,17 @@ public class Fire : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletprefab, firePoint.position, firePoint.rotation);
+        //Shoot the bullet
+        ///bullet = Instantiate(bulletprefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+        if (bullet != null)
+        {
+            bullet.transform.position = firePoint.transform.position;
+            bullet.transform.rotation = firePoint.transform.rotation;
+            bullet.SetActive(true);
+        }
+
+        //Anti-Spam
         coroutine = waitBeforeNextBullet(timeBetweenBullet);
         StartCoroutine(coroutine);
     }

@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
         Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
         if (screenPosition.x < widthThresold.x || screenPosition.x > widthThresold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
         {
-            Destroy(gameObject);
+            ///Destroy(gameObject);
         }
     }
 

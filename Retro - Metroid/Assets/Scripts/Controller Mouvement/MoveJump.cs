@@ -17,6 +17,8 @@ public class MoveJump : MonoBehaviour
     public float jumpNextForce;
     public float gravity = 250f;
 
+    public float timeMinimumBeforeIncreaseJump = 0.2f;
+
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask layerGround;
     [SerializeField] private Transform groundCheck;
@@ -30,6 +32,9 @@ public class MoveJump : MonoBehaviour
     private float jumpTimeCounter;
 
     private bool faceRight = true;
+    private bool increaseJump = false;
+
+    private IEnumerator coroutine;
 
     [SerializeField] private bool inverseGravity = false;
 
@@ -100,23 +105,34 @@ public class MoveJump : MonoBehaviour
             //rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             rb.velocity = new Vector2 (rb.velocity.x, jumpForce );
             jumpTimeCounter = jumpTime;
-        } 
 
-        
+            if (coroutine != null) StopCoroutine(coroutine);
+            coroutine = WaitToIncreaseJump(timeMinimumBeforeIncreaseJump);
+            StartCoroutine(coroutine);
+        }
         if (Input.GetButton("Jump"))
         {
-            if (jumpTimeCounter > 0)
+            if (jumpTimeCounter > 0 && increaseJump)
             {
-                rb.velocity = Vector2.up * jumpNextForce ;
+                rb.velocity = Vector2.up * jumpNextForce;
                 jumpTimeCounter -= Time.fixedDeltaTime;
             }
             Debug.Log("jump");
         }
-        
+
         if (Input.GetButtonUp("Jump"))
         {
             jumpTimeCounter = 0;
+
+            if(coroutine !=null) StopCoroutine(coroutine);
+            increaseJump = false;
         }
+    }
+
+    private IEnumerator WaitToIncreaseJump (float time)
+    {
+        yield return new WaitForSeconds(time);
+        increaseJump = true;
     }
 
 
