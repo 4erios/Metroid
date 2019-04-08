@@ -1,0 +1,1569 @@
+fileFormatVersion: 2
+guid: eff18986155544844b48bbb60adc65c1
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Platformer-Autumn-Game-TileSet2_0
+    21300002: Platformer-Autumn-Game-TileSet2_1
+    21300004: Platformer-Autumn-Game-TileSet2_2
+    21300006: Platformer-Autumn-Game-TileSet2_3
+    21300008: Platformer-Autumn-Game-TileSet2_4
+    21300010: Platformer-Autumn-Game-TileSet2_5
+    21300012: Platformer-Autumn-Game-TileSet2_6
+    21300014: Platformer-Autumn-Game-TileSet2_7
+    21300016: Platformer-Autumn-Game-TileSet2_8
+    21300018: Platformer-Autumn-Game-TileSet2_9
+    21300020: Platformer-Autumn-Game-TileSet2_10
+    21300022: Platformer-Autumn-Game-TileSet2_11
+    21300024: Platformer-Autumn-Game-TileSet2_12
+    21300026: Platformer-Autumn-Game-TileSet2_13
+    21300028: Platformer-Autumn-Game-TileSet2_14
+    21300030: Platformer-Autumn-Game-TileSet2_15
+    21300032: Platformer-Autumn-Game-TileSet2_16
+    21300034: Platformer-Autumn-Game-TileSet2_17
+    21300036: Platformer-Autumn-Game-TileSet2_18
+    21300038: Platformer-Autumn-Game-TileSet2_19
+    21300040: Platformer-Autumn-Game-TileSet2_20
+    21300042: Platformer-Autumn-Game-TileSet2_21
+    21300044: Platformer-Autumn-Game-TileSet2_22
+    21300046: Platformer-Autumn-Game-TileSet2_23
+    21300048: Platformer-Autumn-Game-TileSet2_24
+    21300050: Platformer-Autumn-Game-TileSet2_25
+    21300052: Platformer-Autumn-Game-TileSet2_26
+    21300054: Platformer-Autumn-Game-TileSet2_27
+    21300056: Platformer-Autumn-Game-TileSet2_28
+    21300058: Platformer-Autumn-Game-TileSet2_29
+    21300060: Platformer-Autumn-Game-TileSet2_30
+    21300062: Platformer-Autumn-Game-TileSet2_31
+    21300064: Platformer-Autumn-Game-TileSet2_32
+    21300066: Platformer-Autumn-Game-TileSet2_33
+    21300068: Platformer-Autumn-Game-TileSet2_34
+    21300070: Platformer-Autumn-Game-TileSet2_35
+    21300072: Platformer-Autumn-Game-TileSet2_36
+    21300074: Platformer-Autumn-Game-TileSet2_37
+    21300076: Platformer-Autumn-Game-TileSet2_38
+    21300078: Platformer-Autumn-Game-TileSet2_39
+    21300080: Platformer-Autumn-Game-TileSet2_40
+    21300082: Platformer-Autumn-Game-TileSet2_41
+    21300084: Platformer-Autumn-Game-TileSet2_42
+    21300086: Platformer-Autumn-Game-TileSet2_43
+    21300088: Platformer-Autumn-Game-TileSet2_44
+    21300090: Platformer-Autumn-Game-TileSet2_45
+    21300092: Platformer-Autumn-Game-TileSet2_46
+    21300094: Platformer-Autumn-Game-TileSet2_47
+    21300096: Platformer-Autumn-Game-TileSet2_48
+    21300098: Platformer-Autumn-Game-TileSet2_49
+    21300100: Platformer-Autumn-Game-TileSet2_50
+    21300102: Platformer-Autumn-Game-TileSet2_51
+    21300104: Platformer-Autumn-Game-TileSet2_52
+    21300106: Platformer-Autumn-Game-TileSet2_53
+    21300108: Platformer-Autumn-Game-TileSet2_54
+    21300110: Platformer-Autumn-Game-TileSet2_55
+    21300112: Platformer-Autumn-Game-TileSet2_56
+    21300114: Platformer-Autumn-Game-TileSet2_57
+    21300116: Platformer-Autumn-Game-TileSet2_58
+    21300118: Platformer-Autumn-Game-TileSet2_59
+    21300120: Platformer-Autumn-Game-TileSet2_60
+    21300122: Platformer-Autumn-Game-TileSet2_61
+    21300124: Platformer-Autumn-Game-TileSet2_62
+    21300126: Platformer-Autumn-Game-TileSet2_63
+    21300128: Platformer-Autumn-Game-TileSet2_64
+    21300130: Platformer-Autumn-Game-TileSet2_65
+    21300132: Platformer-Autumn-Game-TileSet2_66
+    21300134: Platformer-Autumn-Game-TileSet2_67
+    21300136: Platformer-Autumn-Game-TileSet2_68
+    21300138: Platformer-Autumn-Game-TileSet2_69
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffcc9fc7d5348d43a7546b070e985de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e621e686a5b9b4645a186b6b79c64f09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e40577a6610b74199dc0ff3220371d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338ee910600b64c41806273f2c52ea55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d63e33211d4404a9def23fe46f4d0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7675fb272c8621640ba188fb1344ff3e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9700d01158071c469a0ff82badaf72e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26adbc83dfe29da4cb3ff4ca038c8aa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888edade5622e194aa68b12baacf9dd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_9
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 822.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1d94e5c473a524b8f8247f52910c80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13094846290c02d4fbd1d54c32f5589c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d24187900f488e43b06e1343c92200c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e28726006a2e4d4f89039112ceb18e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_13
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49df14861d3d264ab28fee63c09bfee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd30deafa9854348a6b499b96a6b9a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9de7abb8c4028046b1a330f618dab1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_16
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ababf219a8be34baf3d4224a337d5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_17
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd4cd7f3105745478a57fb38b2ed957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd98d3b704a19f24ca028dc067c45495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_19
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 685.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5ea43bad42b7e45ace430b25c9ad9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf74316f56488fd478893d43962d447a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d633de79e12165c42b8dd9bca8eb721b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcedc536ca937e44a21fa46cb85f004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_23
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e75177a47c1cc44cbee2464e47d6e77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_24
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99e2ec7aa73f994daa9d488cfd97573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_25
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de38d4ce90c7eb49bf58d469d77a4b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_26
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74667b8a28128234cb9cfeecea27b98c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_27
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3b6a3ae45964843996967408cab716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_28
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c52fec553f3b44daf46c73e063ff88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_29
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 548.8572
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705c16db617e40a40a446b2f6f308440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137a2c3f3d43daf4ea84dc7757c5de48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_31
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d5cd22af043ff4b96aa31b78a44d5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_32
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e26b5adf0d7cb14c83f014a989c2499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_33
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceaf2bcb81e2fed46b305400d4862187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_34
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4978f7a66a49800439826f9b27b96c3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_35
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96db687665c36344b9a180921ab98324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_36
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ad11667202e3f45854d55caa059a11
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_37
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3223343b8af987546a3c7378b980166c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_38
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c62638cdd46614c83ff7f1dc4c7b1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_39
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 411.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d62c9882940554b8a08f89047a3cc7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4980750a46fd3474ba5eb17176433c2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72178c3fb5e512848b503a4695b65e13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_42
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a7e5d1bcf4ab04a9f325fa08500343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_43
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55398ab65d0f534589ab3b0c4ec7583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_44
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6c49e6ef2845844847cd88ed06200b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_45
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d0e73b1a62552449c062a7efeebf0d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_46
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc248569dd9b7824999fdc0557ebb095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_47
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60f8c2ce031e404b81adbf402da2088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_48
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ffe4b9f2ce9c64bacaaa81adc4b836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_49
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 274.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cf5178ca5524b46a6173ccccbb0cec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4eeb41dbd7c6f4d9019dd3f3a57949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_51
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060f445ed7024ac48a297cd7223c57a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0a4da7537ebb5489008fbae273bf0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_53
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7e7161f2e01c741bd7cbdc9afca17c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_54
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3d4678f5aa496429be3e7b14faafd0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_55
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8be8fee58bfda146ae6c29b0e3fa624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_56
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b1d00833b133f4087afd43389eeed5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_57
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc41c55fb45ad0c46ae4b9134c3641a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_58
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835976cfeea5c4843949bc51b8a513aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_59
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 137.85715
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223c48caebf4e58409918ef769034a01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b69375863612f340af449b896b10c17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_61
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8352b2c7a49954982c5d6fb3cc09b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_62
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1726f4e157422cb40b2494b5c0c4b2e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_63
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3522ac37c3011546b61999c14566a36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_64
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2559100a4265ef44da3a2f8464be6a6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_65
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b46b1cb0c52cb945ac07654e675ca26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_66
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f30905171d195c42925e1967a89b789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_67
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ee08aca96b2cb469cabe06e2713203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_68
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa909b359bbbb744c959f755e0f77c6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platformer-Autumn-Game-TileSet2_69
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0.8571472
+        width: 144
+        height: 137.14285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438cfffedb1ce8c48a98b1467adc5d71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 26f5bfb862ebbec468662b70f0b168fc
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
