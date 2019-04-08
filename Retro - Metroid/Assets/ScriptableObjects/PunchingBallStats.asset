@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bb7ff98138e3c4e8bde675e7c8b466, type: 3}
+  m_Name: PunchingBallStats
+  m_EditorClassIdentifier: 
+  enemyHealthPoints: 10
+  enemyDamages: 0
+  enemyAttackRange: 0
+  enemyAnimator: {fileID: 9100000, guid: e9405da3e969cd14f86d495dcf9886d0, type: 2}
