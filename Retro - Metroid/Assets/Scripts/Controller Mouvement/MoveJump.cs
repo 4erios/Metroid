@@ -57,7 +57,7 @@ public class MoveJump : MonoBehaviour
     {
         jumpCatch();
         //Debug.Log("VELO" + rb.velocity);
-        Debug.Log("Ok" + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
+        //Debug.Log("Ok" + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
     }
 
     private void FixedUpdate()
@@ -75,7 +75,7 @@ public class MoveJump : MonoBehaviour
     void Move ()
     {
         axeHorizontal = Input.GetAxis("Horizontal") ;
-        Debug.Log("Move" + axeHorizontal);
+        //Debug.Log("MARCHE" + axeHorizontal);
         rb.velocity = new Vector2(axeHorizontal * moveSpeed ,rb.velocity.y);
         //rb.MovePosition(transform.position + (Vector3)(Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime));
 
@@ -110,6 +110,7 @@ public class MoveJump : MonoBehaviour
             jumpTimeCounter = jumpTime;
 
             animator.SetBool("IsJumping", true);
+            Debug.Log("SAUTE SAUTE SAUTE");
 
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = WaitToIncreaseJump(timeMinimumBeforeIncreaseJump);

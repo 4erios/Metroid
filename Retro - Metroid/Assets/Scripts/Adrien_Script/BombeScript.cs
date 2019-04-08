@@ -23,7 +23,7 @@ public class BombeScript : MonoBehaviour
     {
         if (bombePrefab == enabled)
         {
-            Invoke("Explode", duration);
+           Invoke("Explode", duration);
 
 
 
