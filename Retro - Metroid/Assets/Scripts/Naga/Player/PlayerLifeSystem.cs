@@ -9,12 +9,13 @@ public class PlayerLifeSystem : DamageSystem
     [SerializeField]
     private int stack = 0;
     [HideInInspector]
-    public int readPercentStack;
+    public int readStack;
+    public int initLife = 30;
 
     private void Start()
     {
         lifeMax = 99;
-        currentLife = 30;
+        currentLife = initLife;
     }
 
     private void Update()
@@ -31,7 +32,7 @@ public class PlayerLifeSystem : DamageSystem
 
     private void ForUIStack()
     {
-        readPercentStack = stack / 10;
+        readStack = stack;
     }
 
     private void StackSystem()
@@ -64,5 +65,10 @@ public class PlayerLifeSystem : DamageSystem
         maxStack++;
         stack++;
         currentLife = 99;
+    }
+
+    public void Energy()
+    {
+        currentLife += 15;
     }
 }
