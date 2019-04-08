@@ -42,7 +42,7 @@ public class Player_sphere : MonoBehaviour
             Debug.Log("Je voulais sauter");
         }
 
-        if (bouleState == true || Input.GetButtonDown("Bombe")) {
+        if (bouleState == true && Input.GetButtonDown("Fire")) {
 
             Instantiate(bombePrefab, bombe.position, bombe.rotation);
 
