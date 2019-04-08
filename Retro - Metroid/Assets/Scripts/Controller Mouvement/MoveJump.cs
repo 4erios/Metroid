@@ -12,6 +12,8 @@ public class MoveJump : MonoBehaviour
     /// private float axeVertical;
     /// 
 
+    public Animator animator;
+
     public float moveSpeed = 40;
     public float jumpForce = 150;
     public float jumpNextForce;
@@ -76,7 +78,8 @@ public class MoveJump : MonoBehaviour
         Debug.Log("Move" + axeHorizontal);
         rb.velocity = new Vector2(axeHorizontal * moveSpeed ,rb.velocity.y);
         //rb.MovePosition(transform.position + (Vector3)(Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime));
-        
+
+        animator.SetFloat("Speed", Mathf.Abs(axeHorizontal));
 
         if (faceRight && axeHorizontal < 0)
         {
@@ -106,6 +109,8 @@ public class MoveJump : MonoBehaviour
             rb.velocity = new Vector2 (rb.velocity.x, jumpForce );
             jumpTimeCounter = jumpTime;
 
+            animator.SetBool("IsJumping", true);
+
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = WaitToIncreaseJump(timeMinimumBeforeIncreaseJump);
             StartCoroutine(coroutine);
@@ -124,7 +129,10 @@ public class MoveJump : MonoBehaviour
         {
             jumpTimeCounter = 0;
 
-            if(coroutine !=null) StopCoroutine(coroutine);
+            
+
+
+            if (coroutine !=null) StopCoroutine(coroutine);
             increaseJump = false;
         }
     }
@@ -184,6 +192,10 @@ public class MoveJump : MonoBehaviour
                 if (colliders[i].gameObject != gameObject)
                 {
                     isGrounded = true;
+
+                    //Fin du saut
+                    animator.SetBool("IsJumping", false);
+
                     Debug.Log("player is on ground");
                 }
             }
