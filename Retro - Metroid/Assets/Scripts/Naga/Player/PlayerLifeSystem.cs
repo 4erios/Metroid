@@ -10,11 +10,12 @@ public class PlayerLifeSystem : DamageSystem
     private int stack = 0;
     [HideInInspector]
     public int readStack;
+    public int initLife = 30;
 
     private void Start()
     {
         lifeMax = 99;
-        currentLife = 30;
+        currentLife = initLife;
     }
 
     private void Update()
