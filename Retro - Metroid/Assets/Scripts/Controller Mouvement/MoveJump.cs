@@ -36,6 +36,9 @@ public class MoveJump : MonoBehaviour
     private bool faceRight = true;
     private bool increaseJump = false;
 
+    private bool wasGrounded;
+
+
     private IEnumerator coroutine;
 
     [SerializeField] private bool inverseGravity = false;
@@ -111,6 +114,7 @@ public class MoveJump : MonoBehaviour
 
             animator.SetBool("IsJumping", true);
             Debug.Log("SAUTE SAUTE SAUTE");
+          
 
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = WaitToIncreaseJump(timeMinimumBeforeIncreaseJump);
@@ -118,6 +122,8 @@ public class MoveJump : MonoBehaviour
         }
         if (Input.GetButton("Jump"))
         {
+            
+
             if (jumpTimeCounter > 0 && increaseJump)
             {
                 rb.velocity = Vector2.up * jumpNextForce;
@@ -129,7 +135,7 @@ public class MoveJump : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             jumpTimeCounter = 0;
-
+           
             
 
 
@@ -183,6 +189,8 @@ public class MoveJump : MonoBehaviour
 
     void CheckThatGround()
     {
+        wasGrounded = isGrounded;
+
         isGrounded = false;
 
         if (!inverseGravity)
@@ -190,12 +198,15 @@ public class MoveJump : MonoBehaviour
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundRadius, layerGround);
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject != gameObject && colliders[i].gameObject != null)
                 {
-                    isGrounded = true;
-
                     //Fin du saut
-                    animator.SetBool("IsJumping", false);
+                    if (!wasGrounded)
+                    {
+                        animator.SetBool("IsJumping", false);
+                    }
+
+                    isGrounded = true;
 
                     Debug.Log("player is on ground");
                 }
