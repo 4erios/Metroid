@@ -13,6 +13,7 @@ public class Chara_Controller_Missile : MonoBehaviour
     float nextFire = 0.5f;
     public float damage = 100f;
     public int missileNumber = 0;
+   
 
 
 
@@ -39,6 +40,7 @@ public class Chara_Controller_Missile : MonoBehaviour
     {
 
         Instantiate(missilePrefab, canon.position, canon.rotation);
+       
 
     }
 }

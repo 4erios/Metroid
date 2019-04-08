@@ -6,8 +6,8 @@ public class Player_sphere : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public BoxCollider2D samus;
-    public BoxCollider2D boule;
+    /*public BoxCollider2D samus;
+    public BoxCollider2D boule;*/
     public bool collision;
     Animator animator;
     public bool bouleState = false;
@@ -38,7 +38,7 @@ public class Player_sphere : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("Saut");
             Debug.Log("Je voulais sauter");
         }
 
