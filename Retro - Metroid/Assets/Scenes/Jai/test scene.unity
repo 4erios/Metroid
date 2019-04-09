@@ -879,7 +879,7 @@ PrefabInstance:
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100118.99
+      value: 120142.65
       objectReference: {fileID: 0}
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
@@ -1113,11 +1113,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8090095604403578425, guid: f54a5cf794e9b0546b87c5ffeab09526,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4717586591714744447, guid: f54a5cf794e9b0546b87c5ffeab09526,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1127,6 +1122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090095604403578425, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4717586591116610703, guid: f54a5cf794e9b0546b87c5ffeab09526,
         type: 3}
@@ -1138,6 +1138,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4717586591116610691, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717586591116610691, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 2739914951740445028}
     - target: {fileID: 4717586591116610689, guid: f54a5cf794e9b0546b87c5ffeab09526,
         type: 3}
       propertyPath: m_Enabled
@@ -1156,3 +1166,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4717586591116610701, guid: f54a5cf794e9b0546b87c5ffeab09526, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f54a5cf794e9b0546b87c5ffeab09526, type: 3}
+--- !u!95 &2739914951740445028 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 262638437, guid: f54a5cf794e9b0546b87c5ffeab09526,
+    type: 3}
+  m_PrefabInstance: {fileID: 2739914951740445027}
+  m_PrefabAsset: {fileID: 0}

@@ -7,6 +7,8 @@ public class Chara_Controller_Missile : MonoBehaviour
     // Start is called before the first frame update
     public GameObject missilePrefab;
     public Transform canon;
+    public Animator anim;
+  
 
 
     public float weaponRange = 5f;
@@ -26,9 +28,17 @@ public class Chara_Controller_Missile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire") && Time.time > nextFire)
+
+        if (Input.GetButtonDown("Swith_Weapo"))
         {
-            missileNumber--;
+            anim.SetBool("State Missile", true);
+
+        }
+
+
+     
+        if (Input.GetButtonDown("Fire") && anim.GetBool("State Missile") == true)
+        {
             fireMissile();
 
         }
@@ -38,7 +48,7 @@ public class Chara_Controller_Missile : MonoBehaviour
 
     void fireMissile ()
     {
-
+        missileNumber--;
         Instantiate(missilePrefab, canon.position, canon.rotation);
        
 

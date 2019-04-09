@@ -9,13 +9,13 @@ public class Player_sphere : MonoBehaviour
     /*public BoxCollider2D samus;
     public BoxCollider2D boule;*/
     public bool collision;
-    Animator animator;
-    public bool bouleState = false;
+    Animator anim;
     public GameObject bombePrefab;
     public Transform bombe;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,26 +23,28 @@ public class Player_sphere : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") < -0.1f)
         {
-            animator.SetTrigger("Bas");
+            anim.SetBool("State Boule", true);
             Debug.Log("Je suis en boule");
-            bouleState = true;
+    
         }
 
 
         if (Input.GetAxis("Vertical") > 0.1f)
         {
-            animator.SetTrigger("Haut");
+            anim.SetTrigger("Haut");
+            anim.SetBool("State Boule", false);
             Debug.Log("Je me relève");
         }
 
 
         if(Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("Saut");
+            anim.SetTrigger("Saut");
+            anim.SetBool("State Boule", false);
             Debug.Log("Je voulais sauter");
         }
 
-        if (bouleState == true && Input.GetButtonDown("Fire")) {
+        if (anim.GetBool("StateBoule") && Input.GetButtonDown("Fire")) {
 
             Instantiate(bombePrefab, bombe.position, bombe.rotation);
 
@@ -62,7 +64,7 @@ public class Player_sphere : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D samus)
     {
-        animator.SetBool("Collision", true);
+        anim.SetBool("Collision", true);
         Debug.Log("JE TOUCHE");
     }
 }
