@@ -6,6 +6,8 @@ public class EnemyLifeSystem : DamageSystem
 {
     [HideInInspector]
     private int lifeMob;
+    [SerializeField]
+    private GameObject loot; // Préfab de loot
 
     private void Start()
     {
@@ -24,7 +26,8 @@ public class EnemyLifeSystem : DamageSystem
     {
         if (currentLife <= 0)
         {
-            //Loot Here
+            GameObject objloot;
+            objloot = Instantiate(loot, this.gameObject.transform.position, Quaternion.identity) as GameObject;
             Destroy(this.gameObject);
         }
     }
