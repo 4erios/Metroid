@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     {
         if (ShootUp)
         {
-
+            rb.velocity = transform.up * speed;
         }
         else
         {

@@ -37,8 +37,9 @@ public class Fire : MonoBehaviour
     void UseUpFire()
     {
         axeVertical = Input.GetAxis("Vertical");
+        Debug.Log(axeVertical);
 
-        if (axeVertical < 0.5f )
+        if (axeVertical > 0.5f )
         {
             shootUp = true; 
         }
