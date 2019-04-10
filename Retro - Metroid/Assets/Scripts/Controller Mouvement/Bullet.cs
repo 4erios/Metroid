@@ -11,8 +11,7 @@ public class Bullet : MonoBehaviour
     float checkDistanceBeetweenStartAndActualX;
     float checkDistanceBeetweenStartAndActualY;
     Vector2 ActualPosition;
-
-    
+    private bool ShootUp = false;
 
     public Vector2 widthThresold;
     public Vector2 heightThresold;
@@ -25,10 +24,22 @@ public class Bullet : MonoBehaviour
         
     }
 
+    public void useUpVelocity()
+    {
+        ShootUp = true;
+    }
 
     void OnEnable()
     {
-        rb.velocity = transform.right * speed;
+        if (ShootUp)
+        {
+
+        }
+        else
+        {
+            rb.velocity = transform.right * speed;
+        }
+        ShootUp = false;
 
         startPosition = transform.position;
     }

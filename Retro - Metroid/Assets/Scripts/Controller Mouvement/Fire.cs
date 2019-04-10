@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public Transform firePoint;
+    public Transform firePointUp;
     public GameObject bulletprefab;
     public float timeBetweenBullet;
     public float timeBeforeShootSpeedImprove = 2f;
@@ -16,7 +17,8 @@ public class Fire : MonoBehaviour
     private IEnumerator coroutineDeux;
     private bool shootWhenTimeEnd = false;
     private bool shootImprove = false;
-
+    private float axeVertical;
+    private bool shootUp = false;
     private GameObject bullet;
 
     // Start is called before the first frame update
@@ -28,7 +30,22 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UseUpFire();
         checkIfFire();
+    }
+
+    void UseUpFire()
+    {
+        axeVertical = Input.GetAxis("Vertical");
+
+        if (axeVertical < 0.5f )
+        {
+            shootUp = true; 
+        }
+        else
+        {
+            shootUp = false;
+        }
     }
 
     void checkIfFire ()
@@ -72,8 +89,20 @@ public class Fire : MonoBehaviour
         GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
         if (bullet != null)
         {
-            bullet.transform.position = firePoint.transform.position;
-            bullet.transform.rotation = firePoint.transform.rotation;
+            if (!shootUp)
+            {
+                bullet.transform.position = firePoint.transform.position;
+                bullet.transform.rotation = firePoint.transform.rotation;
+                
+            }
+            else
+            {
+                bullet.transform.position = firePointUp.transform.position;
+                bullet.transform.rotation = firePointUp.transform.rotation;
+
+                bullet.GetComponent<Bullet>().useUpVelocity();
+            }
+
             bullet.SetActive(true);
         }
 
