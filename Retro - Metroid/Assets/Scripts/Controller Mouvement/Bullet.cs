@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Bullet : MonoBehaviour
 {
@@ -11,30 +12,36 @@ public class Bullet : MonoBehaviour
     float checkDistanceBeetweenStartAndActualY;
     Vector2 ActualPosition;
 
-    private Camera mainCamera;
+    
 
     public Vector2 widthThresold;
     public Vector2 heightThresold;
 
+    public float distanceOfShoot = 10;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
+    {
+        
+    }
+
+
+    void OnEnable()
     {
         rb.velocity = transform.right * speed;
+
         startPosition = transform.position;
-
-        mainCamera = Camera.main;
-
-        widthThresold = new Vector2(Screen.width * -1.04f, Screen.width * 1.04f);
-        heightThresold = new Vector2(Screen.height * -1.04f, Screen.height * 1.04f);
     }
+        
+        
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
-        if (screenPosition.x < widthThresold.x || screenPosition.x > widthThresold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
+        ActualPosition = transform.position;
+        if (Vector2.Distance (startPosition, ActualPosition) > distanceOfShoot)
         {
-            ///Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -47,11 +54,25 @@ public class Bullet : MonoBehaviour
             ennemy.TakeDamage();
          }
          */
-        if (hitInfo.name != "Player")
+        if (hitInfo.name != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
         {
-            Destroy(gameObject);
+            ///Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
 
-//https://www.raywenderlich.com/847-object-pooling-in-unity
+    //https://www.raywenderlich.com/847-object-pooling-in-unity
+
+    /*
+     * mainCamera = Camera.main;
+
+        widthThresold = new Vector2(Screen.width * -1.04f, Screen.width * 1.04f);
+        heightThresold = new Vector2(Screen.height * -1.04f, Screen.height * 1.04f);
+        
+     Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
+        if (screenPosition.x < widthThresold.x || screenPosition.x > widthThresold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
+        {
+            ///Destroy(gameObject);
+            gameObject.SetActive(false);
+        }*/
