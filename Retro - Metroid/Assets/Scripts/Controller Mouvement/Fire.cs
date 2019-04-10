@@ -21,6 +21,8 @@ public class Fire : MonoBehaviour
     private bool shootUp = false;
     private GameObject bullet;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +43,13 @@ public class Fire : MonoBehaviour
 
         if (axeVertical > 0.5f )
         {
-            shootUp = true; 
+            shootUp = true;
+            animator.SetBool("IsLookingUp", true);
         }
         else
         {
             shootUp = false;
+            animator.SetBool("IsLookingUp", false);
         }
     }
 
@@ -53,6 +57,7 @@ public class Fire : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire") && !wait) 
         {
+            animator.SetBool("IsFiring", true);
             Shoot(timeBetweenBullet);
             wait = true;
             if (coroutineDeux != null) StopCoroutine(coroutineDeux);
@@ -61,6 +66,7 @@ public class Fire : MonoBehaviour
         }
         else if (Input.GetButtonDown("Fire"))
         {
+            animator.SetBool("IsFiring", true);
             shootWhenTimeEnd = true;
         }
         else if (Input.GetButton("Fire"))
@@ -79,6 +85,7 @@ public class Fire : MonoBehaviour
         else if (Input.GetButtonUp("Fire"))
         {
             shootImprove = false;
+            animator.SetBool("IsFiring", false);
         }
         
     }

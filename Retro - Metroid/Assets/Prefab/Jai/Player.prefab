@@ -153,6 +153,7 @@ MonoBehaviour:
   timeBeforeShootSpeedImprove: 2
   timeBetweenBulletBefore: 0.2
   timeBetweenBulletAfter: 0.01
+  animator: {fileID: 262638437}
 --- !u!50 &262638436
 Rigidbody2D:
   serializedVersion: 4
