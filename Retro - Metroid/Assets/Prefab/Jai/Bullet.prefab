@@ -135,4 +135,4 @@ MonoBehaviour:
   rb: {fileID: 8910605758254507837}
   widthThresold: {x: 0, y: 0}
   heightThresold: {x: 0, y: 0}
-  distanceOfShoot: 5
+  distanceOfShoot: 4

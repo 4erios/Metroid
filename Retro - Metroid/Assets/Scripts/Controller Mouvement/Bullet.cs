@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
             ennemy.TakeDamage();
          }
          */
-        if (hitInfo.name != "Player")
+        if (hitInfo.name != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
         {
             ///Destroy(gameObject);
             gameObject.SetActive(false);

@@ -7,9 +7,15 @@ public class Fire : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletprefab;
     public float timeBetweenBullet;
+    public float timeBeforeShootSpeedImprove = 2f;
+    public float timeBetweenBulletBefore = 0.3f;
+    public float timeBetweenBulletAfter = 0.2f;
+
     private bool wait = false;
     private IEnumerator coroutine;
+    private IEnumerator coroutineDeux;
     private bool shootWhenTimeEnd = false;
+    private bool shootImprove = false;
 
     private GameObject bullet;
 
@@ -29,32 +35,37 @@ public class Fire : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire") && !wait) 
         {
-            Shoot();
+            Shoot(timeBetweenBullet);
             wait = true;
+            if (coroutineDeux != null) StopCoroutine(coroutineDeux);
+            coroutineDeux = waitBeforeSpam (timeBeforeShootSpeedImprove);
+            StartCoroutine(coroutineDeux);
         }
         else if (Input.GetButtonDown("Fire"))
         {
             shootWhenTimeEnd = true;
         }
+        else if (Input.GetButton("Fire"))
+        {
+            if (!shootImprove && !wait)
+            {
+                Shoot(timeBetweenBulletBefore);
+                wait = true;
+            }
+            else if (shootImprove && !wait)
+            {
+                Shoot(timeBetweenBulletAfter);
+                wait = true;
+            }
+        }
+        else if (Input.GetButtonUp("Fire"))
+        {
+            shootImprove = false;
+        }
+        
     }
 
-    IEnumerator waitBeforeNextBullet (float time)
-    {
-        yield return new WaitForSeconds(time);
-
-        if (shootWhenTimeEnd)
-        {
-            shootWhenTimeEnd = false;
-            wait = true;
-            Shoot();
-        }
-        else
-        {
-            wait = false;
-        }
-    }
-
-    void Shoot()
+    void Shoot(float time)
     {
         //Shoot the bullet
         ///bullet = Instantiate(bulletprefab, firePoint.position, firePoint.rotation);
@@ -67,7 +78,29 @@ public class Fire : MonoBehaviour
         }
 
         //Anti-Spam
-        coroutine = waitBeforeNextBullet(timeBetweenBullet);
+        coroutine = waitBeforeNextBullet(time);
         StartCoroutine(coroutine);
+    }
+
+    IEnumerator waitBeforeNextBullet(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (shootWhenTimeEnd)
+        {
+            shootWhenTimeEnd = false;
+            wait = true;
+            Shoot(timeBetweenBullet);
+        }
+        else
+        {
+            wait = false;
+        }
+    }
+
+    IEnumerator waitBeforeSpam (float time)
+    {
+        yield return new WaitForSeconds(time);
+        shootImprove = true;
     }
 }
