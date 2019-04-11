@@ -10,6 +10,7 @@ public class MissileScript : MonoBehaviour
     public Rigidbody2D rb;
     public int damage = 40;
     public GameObject impactEffect;
+    public float duration = 0.1f;
 
 
 
@@ -24,9 +25,9 @@ public class MissileScript : MonoBehaviour
 
 
 
-        
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+       
+       // Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(gameObject, duration);
 
 
     }
