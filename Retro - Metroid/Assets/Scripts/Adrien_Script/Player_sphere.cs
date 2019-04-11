@@ -14,6 +14,7 @@ public class Player_sphere : MonoBehaviour
     public GameObject ExplosionPrefab;
     public Transform CeilingCheck;
     public float Radius = 5f;
+    public LayerMask Ground;
 
 
 
@@ -25,10 +26,11 @@ public class Player_sphere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Permet le passage en boule
         if (Input.GetAxis("Vertical") < -0.1f)
         {
             anim.SetBool("Boule_State", true);
-            Debug.Log("Je suis en boule");
+            
     
         }
 
@@ -48,6 +50,7 @@ public class Player_sphere : MonoBehaviour
          
         }
 
+        // Permet de poser les bombes
         if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
         
@@ -55,38 +58,41 @@ public class Player_sphere : MonoBehaviour
    
         }
 
-        if (anim.GetBool("Boule_State") && anim.GetBool("Collision"))
+        // Permet de bloquer la boule si elle détecte des collisions
+        /*if (anim.GetBool("Boule_State") && anim.GetBool("Collision"))
         {
 
             anim.SetBool("Boule State", true);
 
 
-        }
+        }*/
 
+        // Permet de bloquer la boule si elle détecte des collisions
         if (anim.GetBool("Boule_State") == true)
         {
-            // If the character has a ceiling preventing them from standing up, keep them crouching
-            if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, 8))
+           
+            if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, Ground))
             {
-                anim.SetBool("Boule_State", true);
+                anim.SetBool("Collision", true);
+                Debug.Log("JE TOUCHE");
             }
+            else
+            {
+
+                anim.SetBool("Collision", false);
+            }
+            // Permet d'empêcher à la boule de sauter
+            anim.SetBool("IsJumping", false);
+
 
 
 
 
         }
 
-    /*private void OnTriggerStay2D(Collider2D samus)
-    {
-        anim.SetBool("Collision", true);
-        Debug.Log("JE TOUCHE");*/
+   
     }
 
 
-    IEnumerator TimeBeforeExplosion()
-    {
-
-        yield return new WaitForSeconds(1);
-        Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
-    }
+   
 }

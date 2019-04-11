@@ -17,7 +17,7 @@ public class Explosion_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Variable Destruct appelée dans l'Animator
         AnimExplo.SetTrigger("Explosion");
 
         if (Destruct == true) {

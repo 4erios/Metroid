@@ -25,7 +25,7 @@ public class BombeScript : MonoBehaviour
 
     IEnumerator TimeBeforeExplosion()
     {
-
+        // Coroutine permettant de faire pop l'explosion après 1 sec 
         yield return new WaitForSeconds(1);
         Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
         Destroy(gameObject);
