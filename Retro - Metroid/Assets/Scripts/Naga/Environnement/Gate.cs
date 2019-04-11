@@ -7,6 +7,7 @@ public class Gate : MonoBehaviour
     [SerializeField]
     private bool bGateIsOpen = false;
     private bool bPlayerInside = false;
+    private Gaùe
     public GameObject[] gate;
 
 
@@ -16,14 +17,13 @@ public class Gate : MonoBehaviour
         {
             GateInteract();
             StartCoroutine(OpenGate());
+            Destroy(other.gameObject);
         }
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
+        if (other.tag == "Player")
         {
             bPlayerInside = true;
+            Transition();
         }
 
         else
@@ -40,6 +40,11 @@ public class Gate : MonoBehaviour
         {
             gate[i].GetComponent<Animator>().SetBool("Gate Interact", bGateIsOpen);
         }
+    }
+
+    private void Transition()
+    {
+
     }
 
     IEnumerator OpenGate()

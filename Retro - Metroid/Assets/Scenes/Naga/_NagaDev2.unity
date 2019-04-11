@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86565528}
   - component: {fileID: 86565527}
+  - component: {fileID: 86565529}
   m_Layer: 0
   m_Name: Test Bord Camera
   m_TagString: Untagged
@@ -179,6 +180,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86565529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86565526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fbe2c7c42b69d4dbf92d3d78e4a547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaType: H
 --- !u!1 &92942130
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253080830}
   - component: {fileID: 1253080829}
+  - component: {fileID: 1253080831}
   m_Layer: 0
   m_Name: Test Bord Camera (1)
   m_TagString: Untagged
@@ -923,6 +938,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253080831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253080828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fbe2c7c42b69d4dbf92d3d78e4a547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaType: H
 --- !u!1 &1302489193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1080,7 @@ PrefabInstance:
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16270.572
+      value: 14190.572
       objectReference: {fileID: 0}
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
@@ -1255,7 +1283,7 @@ PrefabInstance:
     - target: {fileID: 2739914951834655233, guid: f54a5cf794e9b0546b87c5ffeab09526,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2739914951834655236, guid: f54a5cf794e9b0546b87c5ffeab09526,
         type: 3}
@@ -1417,13 +1445,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2141140905, guid: fbf025f756aacf34fae0c765cf09462f, type: 3}
-      propertyPath: linkedArea
-      value: 
-      objectReference: {fileID: 86565526}
-    - target: {fileID: 1382952846, guid: fbf025f756aacf34fae0c765cf09462f, type: 3}
-      propertyPath: linkedArea
-      value: 
-      objectReference: {fileID: 1253080828}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf025f756aacf34fae0c765cf09462f, type: 3}
