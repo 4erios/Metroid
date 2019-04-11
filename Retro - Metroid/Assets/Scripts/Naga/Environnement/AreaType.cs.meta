@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 9610dbdffe131384995462493149a37a
+guid: 73fbe2c7c42b69d4dbf92d3d78e4a547
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - loot: {fileID: 8274554654529038201, guid: cf8449c90b9ce9a40afcb1aada96bbbf, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

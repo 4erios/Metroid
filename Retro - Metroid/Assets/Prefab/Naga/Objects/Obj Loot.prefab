@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missile: 0
-  missileSprite: {fileID: 21300000, guid: 9ade26453642f2747814e36aafbe0345, type: 3}
+  missileSprite: {fileID: 21300108, guid: 4de8d9c288de8a24aa3a50d3047a4198, type: 3}
   energy: 0
-  energySprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  energySprite: {fileID: 21300112, guid: 4de8d9c288de8a24aa3a50d3047a4198, type: 3}
   skill: 0
