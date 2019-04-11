@@ -8,7 +8,9 @@ public class Chara_Controller_Missile : MonoBehaviour
     public GameObject missilePrefab;
     public Transform canon;
     public Animator anim;
-  
+
+ 
+
 
 
     public float weaponRange = 5f;
@@ -18,13 +20,6 @@ public class Chara_Controller_Missile : MonoBehaviour
    
 
 
-
-
-    void Awake()
-    {
-      
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,7 +27,7 @@ public class Chara_Controller_Missile : MonoBehaviour
         if (Input.GetButtonDown("Swith_Weapo"))
         {
             anim.SetBool("State Missile", true);
-
+         
         }
 
 
@@ -42,6 +37,7 @@ public class Chara_Controller_Missile : MonoBehaviour
             fireMissile();
 
         }
+
 
     }
 

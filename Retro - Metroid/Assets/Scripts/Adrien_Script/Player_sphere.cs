@@ -23,7 +23,7 @@ public class Player_sphere : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") < -0.1f)
         {
-            anim.SetBool("State Boule", true);
+            anim.SetBool("Boule_State", true);
             Debug.Log("Je suis en boule");
     
         }
@@ -32,7 +32,7 @@ public class Player_sphere : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0.1f)
         {
             anim.SetTrigger("Haut");
-            anim.SetBool("State Boule", false);
+            anim.SetBool("Boule_State", false);
             Debug.Log("Je me relève");
         }
 
@@ -40,13 +40,15 @@ public class Player_sphere : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             anim.SetTrigger("Saut");
-            anim.SetBool("State Boule", false);
+            anim.SetBool("Boule_State", false);
             Debug.Log("Je voulais sauter");
         }
 
-        if (anim.GetBool("StateBoule") && Input.GetButtonDown("Fire")) {
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
+            Debug.Log("JE CHIE UNE BOMBE");
             Instantiate(bombePrefab, bombe.position, bombe.rotation);
+         
 
         }
         /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)

@@ -879,7 +879,7 @@ PrefabInstance:
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 107418.586
+      value: 113613.195
       objectReference: {fileID: 0}
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
@@ -952,7 +952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collision: 0
-  bouleState: 0
   bombePrefab: {fileID: 3607699686531387954, guid: df2a7afdc3c5e4c498df9a397330cb93,
     type: 3}
   bombe: {fileID: 1937216526}
@@ -1118,11 +1117,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420891327403145984, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717586591116610696, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717586591116610691, guid: f54a5cf794e9b0546b87c5ffeab09526,
+        type: 3}
+      propertyPath: missileNumber
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f54a5cf794e9b0546b87c5ffeab09526, type: 3}
---- !u!95 &2739914951740445028 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 262638437, guid: f54a5cf794e9b0546b87c5ffeab09526,
-    type: 3}
-  m_PrefabInstance: {fileID: 2739914951740445027}
-  m_PrefabAsset: {fileID: 0}
