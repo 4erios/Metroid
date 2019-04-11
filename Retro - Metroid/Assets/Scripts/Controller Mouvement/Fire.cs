@@ -39,17 +39,32 @@ public class Fire : MonoBehaviour
     void UseUpFire()
     {
         axeVertical = Input.GetAxis("Vertical");
-        Debug.Log(axeVertical);
 
-        if (axeVertical > 0.5f )
+        if (MoveJump.inverseGravity == false)
         {
-            shootUp = true;
-            animator.SetBool("IsLookingUp", true);
+            if (axeVertical > 0.5f)
+            {
+                shootUp = true;
+                animator.SetBool("IsLookingUp", true);
+            }
+            else
+            {
+                shootUp = false;
+                animator.SetBool("IsLookingUp", false);
+            }
         }
         else
         {
-            shootUp = false;
-            animator.SetBool("IsLookingUp", false);
+            if (axeVertical < -0.5f)
+            {
+                shootUp = true;
+                animator.SetBool("IsLookingUp", true);
+            }
+            else
+            {
+                shootUp = false;
+                animator.SetBool("IsLookingUp", false);
+            }
         }
     }
 
