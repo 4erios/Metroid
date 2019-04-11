@@ -68,6 +68,10 @@ public class Bullet : MonoBehaviour
         if (hitInfo.name != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
         {
             ///Destroy(gameObject);
+            if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
+            {
+                hitInfo.gameObject.GetComponent<EnemyClass>().TakeDamages(20000);
+            }
             gameObject.SetActive(false);
         }
     }

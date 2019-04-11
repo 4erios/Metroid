@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class Explosion_Script : MonoBehaviour
 {
-
-    public Animator AnimExplo;
-    public GameObject Explosion;
+    
+     Animator AnimExplo;
     // Start is called before the first frame update
     void Start()
     {
-        
+        AnimExplo = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       AnimExplo.SetTrigger("Explosion");
-      
+
+
+        StartCoroutine(TimeBeforeDestruction());
+
+    }
+
+    IEnumerator TimeBeforeDestruction()
+    {
+        AnimExplo.SetTrigger("Explosion");
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+
+       
     }
 }
