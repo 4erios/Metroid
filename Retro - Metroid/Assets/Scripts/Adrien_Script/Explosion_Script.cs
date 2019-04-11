@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Explosion_Script : MonoBehaviour
 {
+
+    public Animator AnimExplo;
+    public GameObject Explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,7 @@ public class Explosion_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       AnimExplo.SetTrigger("Explosion");
+      
     }
 }

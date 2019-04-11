@@ -12,6 +12,7 @@ public class Player_sphere : MonoBehaviour
     Animator anim;
     public GameObject bombePrefab;
     public Transform bombe;
+    public GameObject ExplosionPrefab;
 
     void Start()
     {
@@ -48,6 +49,8 @@ public class Player_sphere : MonoBehaviour
 
             Debug.Log("JE CHIE UNE BOMBE");
             Instantiate(bombePrefab, bombe.position, bombe.rotation);
+            TimeBeforeExplosion();
+
          
 
         }
@@ -68,5 +71,19 @@ public class Player_sphere : MonoBehaviour
     {
         anim.SetBool("Collision", true);
         Debug.Log("JE TOUCHE");
+    }
+
+
+    IEnumerator TimeBeforeExplosion()
+    {
+
+        yield return new WaitForSeconds(1);
+        Instantiate(ExplosionPrefab, bombe.position, bombe.rotation);
+        Destroy(bombePrefab);
+
+
+
+
+
     }
 }

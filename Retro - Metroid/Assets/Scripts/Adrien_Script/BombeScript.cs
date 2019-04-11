@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class BombeScript : MonoBehaviour
 {
-
-    public GameObject bombePrefab;
-    public float power = 50f;
-    public float radius = 2f;
-    public float upforce = 1.0f;
-    public float duration = 3f;
-
+  /*  public GameObject ExplosionPrefab;
+    public Transform bombe;
+    public GameObject BombePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -21,31 +17,28 @@ public class BombeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bombePrefab == enabled)
-        {
-           Invoke("Explode", duration);
+       
 
-
-
-
-        }
     }
-    void Explode ()
+
+
+
+    void Explosion()
     {
-     
-        Vector3 explosionPosition = bombePrefab.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
-        foreach (Collider hit in colliders)
+
+        IEnumerator TimeBeforeExplosion()
         {
 
-           Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddExplosionForce(power, explosionPosition, radius, upforce, ForceMode.Impulse);
+            yield return new WaitForSeconds(1);
+            Instantiate(ExplosionPrefab, bombe.position, bombe.rotation);
+            Destroy(BombePrefab);
 
-            }
-           
+          
+
+
 
         }
+
     }
+    */
 }

@@ -24,7 +24,7 @@ public class Chara_Controller_Missile : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Swith_Weapo"))
+        if (Input.GetButtonDown("Switch_Weapon"))
         {
             anim.SetBool("State Missile", true);
          
