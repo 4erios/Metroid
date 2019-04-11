@@ -33,7 +33,7 @@ public class Player_sphere : MonoBehaviour
         {
             anim.SetTrigger("Haut");
             anim.SetBool("Boule_State", false);
-            Debug.Log("Je me relève");
+         
         }
 
 
@@ -41,16 +41,21 @@ public class Player_sphere : MonoBehaviour
         {
             anim.SetTrigger("Saut");
             anim.SetBool("Boule_State", false);
-            Debug.Log("Je voulais sauter");
+         
         }
 
         if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
-            Debug.Log("JE CHIE UNE BOMBE");
+        
             Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
-            //StartCoroutine(TimeBeforeExplosion());
+   
+        }
 
-         
+        if (anim.GetBool("Boule_State") && anim.GetBool("Collision"))
+        {
+
+            anim.SetBool("Boule State", true);
+
 
         }
     
