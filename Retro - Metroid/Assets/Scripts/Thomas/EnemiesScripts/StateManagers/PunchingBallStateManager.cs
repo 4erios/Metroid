@@ -17,7 +17,7 @@ public class PunchingBallStateManager : EnemyClass
         //récupération des stats du scriptable
         health = stats.enemyHealthPoints;
 
-        punchingballanims = stats.enemyAnimator;
+       
     }
 
     void Update()

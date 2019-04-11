@@ -10,6 +10,6 @@ public class EnemiesBaseStats : ScriptableObject
     public float enemyDamages;
     public float enemyAttackRange;
 
-    public RuntimeAnimatorController enemyAnimator;
+    
 
 }
