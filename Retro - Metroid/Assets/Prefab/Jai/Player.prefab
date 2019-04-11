@@ -77,9 +77,10 @@ GameObject:
   - component: {fileID: 262638437}
   - component: {fileID: 262638442}
   - component: {fileID: 82582038}
+  - component: {fileID: 1099083569}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 2739914951834655233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.51, y: 3.45, z: 0.013671875}
-  m_LocalScale: {x: 6.3, y: 6.3, z: 0}
+  m_LocalScale: {x: 6.3000007, y: 6.3, z: 0}
   m_Children:
   - {fileID: 2739914951479932526}
   - {fileID: 2739914952154055831}
@@ -132,7 +133,7 @@ MonoBehaviour:
   fallMultiplier: 3
   lowJumpMultiplier: 2
   jumpTime: 0.2
-  inverseGravity: 0
+  scriptChangeColor: {fileID: 1099083569}
 --- !u!114 &5420891327403145984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +219,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 534f4693850e15746967a0fc0a905c2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -301,6 +302,18 @@ MonoBehaviour:
   stack: 0
   readStack: 0
   initLife: 30
+--- !u!114 &1099083569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739914951834655233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dee9a3e09a77248ab155d97d985047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2739914952154055824
 GameObject:
   m_ObjectHideFlags: 0

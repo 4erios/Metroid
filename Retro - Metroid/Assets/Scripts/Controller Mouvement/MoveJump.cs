@@ -39,6 +39,8 @@ public class MoveJump : MonoBehaviour
     private bool wasGrounded;
     private bool canChangeGravity;
 
+    public colorChangeScript scriptChangeColor;
+
 
     private IEnumerator coroutine;
 
@@ -193,8 +195,18 @@ public class MoveJump : MonoBehaviour
         {
             inverseGravity = !inverseGravity;
             transform.Rotate(180f, 0, 0);
-            Debug.Log("Gravity change");
+            
             canChangeGravity = false;
+
+            if (inverseGravity == false)
+            {
+                scriptChangeColor.NormalGravity();
+                Debug.Log("Gravity change");
+            }
+            else
+            {
+                scriptChangeColor.InverseGravity();
+            }
         }
     }
 

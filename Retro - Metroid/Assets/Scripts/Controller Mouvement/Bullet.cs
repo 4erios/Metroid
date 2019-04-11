@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour
             ennemy.TakeDamage();
          }
          */
-        if (hitInfo.name != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
+        if (hitInfo.tag != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
         {
             ///Destroy(gameObject);
             if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)

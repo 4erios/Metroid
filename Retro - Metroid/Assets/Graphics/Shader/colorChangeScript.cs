@@ -5,6 +5,7 @@ using UnityEngine;
 public class colorChangeScript : MonoBehaviour
 {
     Texture2D mColorSwapTex;
+    Texture2D baseColor;
     Color[] mSpriteColors;
 
     SpriteRenderer mSpriteRenderer;
@@ -17,8 +18,8 @@ public class colorChangeScript : MonoBehaviour
     private void Start()
     {
         InitColorSwapTex();
-        SwapColor(SwapIndex.Gun, new Color(0, 232, 216));
-        mColorSwapTex.Apply();
+        //SwapColor(SwapIndex.Gun, new Color(0, 232, 216));
+        //mColorSwapTex.Apply();
     }
 
     public void InitColorSwapTex()
@@ -30,6 +31,8 @@ public class colorChangeScript : MonoBehaviour
             colorSwapTex.SetPixel(i, 0, new Color(0.0f, 0.0f, 0.0f, 0.0f));
 
         colorSwapTex.Apply();
+
+        
 
         mSpriteRenderer.material.SetTexture("_SwapTex", colorSwapTex);
 
@@ -61,8 +64,8 @@ public class colorChangeScript : MonoBehaviour
 
     public void NormalGravity()
     {
-        SwapColor(SwapIndex.Armor, new Color(216, 40, 0));
-        SwapColor(SwapIndex.Cloth, new Color(252, 152, 56));
+        ClearColor(SwapIndex.Armor);
+        ClearColor(SwapIndex.Cloth);
         mColorSwapTex.Apply();
     }
 
@@ -82,6 +85,39 @@ public class colorChangeScript : MonoBehaviour
     public void Normalbullet ()
     {
         SwapColor(SwapIndex.Gun, new Color(0, 148, 0));
+        mColorSwapTex.Apply();
+    }
+
+    //UTILITY
+    public void ResetAllSpritesColors()
+    {
+        for (int i = 0; i < mColorSwapTex.width; ++i)
+            mColorSwapTex.SetPixel(i, 0, mSpriteColors[i]);
+        mColorSwapTex.Apply();
+    }
+
+    public void ClearColor(SwapIndex index)
+    {
+        Color c = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        mSpriteColors[(int)index] = c;
+        mColorSwapTex.SetPixel((int)index, 0, c);
+        mColorSwapTex.Apply();
+    }
+
+    public void SwapAllSpritesColorsTemporarily(Color color)
+    {
+        for (int i = 0; i < mColorSwapTex.width; ++i)
+            mColorSwapTex.SetPixel(i, 0, color);
+        mColorSwapTex.Apply();
+    }
+
+    public void ClearAllSpritesColors()
+    {
+        for (int i = 0; i < mColorSwapTex.width; ++i)
+        {
+            mColorSwapTex.SetPixel(i, 0, new Color(0.0f, 0.0f, 0.0f, 0.0f));
+            mSpriteColors[i] = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        }
         mColorSwapTex.Apply();
     }
 }
