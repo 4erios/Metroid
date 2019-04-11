@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GateArea : MonoBehaviour
 {
     [SerializeField]
     private string areaType;
+    [SerializeField]
+    private GameObject linkedArea;
 
     private void Start()
     {
@@ -21,6 +24,23 @@ public class GateArea : MonoBehaviour
         if(collision.tag == "Player")
         {
             GameObject.Find("Camera").GetComponent<CameraScript>().areaType = areaType;
+
+            SetupLinkedArea();
         }
     }
+
+    private void SetupLinkedArea()
+    {
+        if(areaType == "H")
+        {
+            GameObject.Find("Camera").GetComponent<CameraScript>().cameraH.GetComponent<CinemachineConfiner>().m_BoundingShape2D = linkedArea.GetComponent<PolygonCollider2D>();
+        }
+
+        else
+        {
+            GameObject.Find("Camera").GetComponent<CameraScript>().cameraV.GetComponent<CinemachineConfiner>().m_BoundingShape2D = linkedArea.GetComponent<PolygonCollider2D>();
+        }
+    }
+
+
 }
