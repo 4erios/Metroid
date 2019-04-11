@@ -9,26 +9,43 @@ public class MissileScript : MonoBehaviour
     public float speed = 5f;
     public Rigidbody2D rb;
     public int damage = 40;
-    public GameObject impactEffect;
-
+    public float duration = 0.1f;
+    Animator anim;
+    
 
 
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb.velocity = transform.right * speed;
+        Destroy(gameObject, duration);
+        anim.SetTrigger("Explosion");
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+
+    void Update()
     {
 
+    
 
-
-        
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
 
 
     }
 
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.tag != "Player")
+        {
+            if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
+            {
+                hitInfo.gameObject.GetComponent<EnemyClass>().TakeDamages(20000);
+            }
+            Destroy(gameObject);
+            anim.SetTrigger("Explosion");
+        }
+
+
+    }
 }  

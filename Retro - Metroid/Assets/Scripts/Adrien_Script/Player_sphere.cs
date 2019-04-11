@@ -6,63 +6,93 @@ public class Player_sphere : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public BoxCollider2D samus;
-    public BoxCollider2D boule;
+
     public bool collision;
-    Animator animator;
-    public bool bouleState = false;
+    Animator anim;
     public GameObject bombePrefab;
-    public Transform bombe;
+    public Transform bombePosition;
+    public GameObject ExplosionPrefab;
+    public Transform CeilingCheck;
+    public float Radius = 5f;
+    public LayerMask Ground;
+
+
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Permet le passage en boule
         if (Input.GetAxis("Vertical") < -0.1f)
         {
-            animator.SetTrigger("Bas");
-            Debug.Log("Je suis en boule");
-            bouleState = true;
+            anim.SetBool("Boule_State", true);
+            
+    
         }
 
 
         if (Input.GetAxis("Vertical") > 0.1f)
         {
-            animator.SetTrigger("Haut");
-            Debug.Log("Je me relève");
+            anim.SetTrigger("Haut");
+            anim.SetBool("Boule_State", false);
+         
         }
 
 
         if(Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("Jump");
-            Debug.Log("Je voulais sauter");
+            anim.SetTrigger("Saut");
+            anim.SetBool("Boule_State", false);
+         
         }
 
-        if (bouleState == true && Input.GetButtonDown("Fire")) {
+        // Permet de poser les bombes
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
-            Instantiate(bombePrefab, bombe.position, bombe.rotation);
-
+        
+            Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
+   
         }
-        /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)
-            {
 
-            boule.isTrigger = true;
-            samus.isTrigger = false;
-            Debug.Log("Je redeviens Samus");
+        // Permet de bloquer la boule si elle détecte des collisions
+        /*if (anim.GetBool("Boule_State") && anim.GetBool("Collision"))
+        {
+
+            anim.SetBool("Boule State", true);
+
 
         }*/
 
+        // Permet de bloquer la boule si elle détecte des collisions
+        if (anim.GetBool("Boule_State") == true)
+        {
+           
+            if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, Ground))
+            {
+                anim.SetBool("Collision", true);
+                Debug.Log("JE TOUCHE");
+            }
+            else
+            {
+
+                anim.SetBool("Collision", false);
+            }
+            // Permet d'empêcher à la boule de sauter
+            anim.SetBool("IsJumping", false);
 
 
+
+
+
+        }
+
+   
     }
 
-    private void OnTriggerStay2D(Collider2D samus)
-    {
-        animator.SetBool("Collision", true);
-        Debug.Log("JE TOUCHE");
-    }
+
+   
 }

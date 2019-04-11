@@ -7,38 +7,56 @@ public class Chara_Controller_Missile : MonoBehaviour
     // Start is called before the first frame update
     public GameObject missilePrefab;
     public Transform canon;
-
-
-    public float weaponRange = 5f;
-    float nextFire = 0.5f;
-    public float damage = 100f;
+    public Animator anim;
+    public bool StateMissile = false; 
+    public bool BaseState = true;
     public int missileNumber = 0;
+   
 
-
-
-
-    void Awake()
-    {
-      
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire") && Time.time > nextFire)
+        // Switch entre tir et missile
+        if (Input.GetButtonDown("Switch_Weapon"))
         {
-            missileNumber--;
+           if (BaseState == true)
+            {
+                StateMissile = true;
+                BaseState = false;
+                Debug.Log("Mode Missile ON");
+
+            }
+           else
+            {
+
+
+                BaseState = true;
+                StateMissile = false;
+                Debug.Log("Mode Tir ON");
+            }
+
+        
+         
+        }
+
+
+     
+        if (Input.GetButtonDown("Fire") && StateMissile == true && missileNumber > 0)
+        {
             fireMissile();
 
         }
+
 
     }
 
 
     void fireMissile ()
     {
-
+        missileNumber--;
         Instantiate(missilePrefab, canon.position, canon.rotation);
+       
 
     }
 }
