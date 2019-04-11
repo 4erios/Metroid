@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 765306700159247499}
   - component: {fileID: 9024161610829072431}
   - component: {fileID: 1156367724058855493}
-  - component: {fileID: 8675714750055950691}
   - component: {fileID: 845877234}
+  - component: {fileID: 3843928001704282760}
   m_Layer: 0
   m_Name: BombePrefab
-  m_TagString: Untagged
+  m_TagString: Projectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3607699686531387954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.74, y: 1.62, z: -0.017632963}
-  m_LocalScale: {x: 0.027970636, y: 0.026246693, z: 0.1342}
+  m_LocalScale: {x: 4.8129535, y: 4.5163116, z: 23.092014}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fde21ca6bb763954598cfbc62ad82564, type: 3}
+  m_Sprite: {fileID: 21301056, guid: e204d4f410937f54880fc1339f16234b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3607699686531387954}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -103,7 +103,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &8675714750055950691
+--- !u!114 &845877234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607699686531387954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0a2aae25118e345bdbc41b3c22bbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionPrefab: {fileID: 9103756224047172597, guid: 6749829bb25e874458f45f054d290e4f,
+    type: 3}
+  bombePosition: {fileID: 765306700159247499}
+  BombePrefab: {fileID: 3607699686531387954}
+--- !u!58 &3843928001704282760
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,21 +134,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
---- !u!114 &845877234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3607699686531387954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a0a2aae25118e345bdbc41b3c22bbde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombePrefab: {fileID: 3607699686531387954}
-  power: 50
-  radius: 2
-  upforce: 1
-  duration: 3
+  m_Radius: 0.04
