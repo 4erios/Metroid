@@ -271,11 +271,11 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Collision
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Saut
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Boule_State
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102448249196168974}
@@ -1322,9 +1322,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Boule_State
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Collision
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Haut

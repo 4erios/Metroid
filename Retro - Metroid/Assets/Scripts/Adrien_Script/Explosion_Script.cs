@@ -26,14 +26,9 @@ public class Explosion_Script : MonoBehaviour
 
         }
 
-      //  StartCoroutine(TimeBeforeDestruction());
    }
 
-   // IEnumerator TimeBeforeDestruction()
-    
-        //AnimExplo.SetTrigger("Explosion");
-       // yield return new WaitForSeconds(1);
-        //Destroy(gameObject);
+   
 
        
     }

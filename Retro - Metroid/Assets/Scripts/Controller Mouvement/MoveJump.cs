@@ -128,6 +128,7 @@ public class MoveJump : MonoBehaviour
             {
                 rb.velocity = Vector2.up * jumpNextForce;
                 jumpTimeCounter -= Time.fixedDeltaTime;
+                animator.SetBool("Boule State", false);
             }
             Debug.Log("jump");
         }

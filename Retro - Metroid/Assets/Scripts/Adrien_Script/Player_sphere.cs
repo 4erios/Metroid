@@ -12,6 +12,10 @@ public class Player_sphere : MonoBehaviour
     public GameObject bombePrefab;
     public Transform bombePosition;
     public GameObject ExplosionPrefab;
+    public Transform CeilingCheck;
+    public float Radius = 5f;
+
+
 
     void Start()
     {
@@ -58,14 +62,24 @@ public class Player_sphere : MonoBehaviour
 
 
         }
-    
 
-    }
+        if (anim.GetBool("Boule_State") == true)
+        {
+            // If the character has a ceiling preventing them from standing up, keep them crouching
+            if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, 8))
+            {
+                anim.SetBool("Boule_State", true);
+            }
 
-    private void OnTriggerStay2D(Collider2D samus)
+
+
+
+        }
+
+    /*private void OnTriggerStay2D(Collider2D samus)
     {
         anim.SetBool("Collision", true);
-        Debug.Log("JE TOUCHE");
+        Debug.Log("JE TOUCHE");*/
     }
 
 
