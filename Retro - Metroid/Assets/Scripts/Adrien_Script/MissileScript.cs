@@ -11,7 +11,10 @@ public class MissileScript : MonoBehaviour
     public int damage = 40;
     public GameObject impactEffect;
     public float duration = 0.1f;
-
+    public Transform MissilePos;
+    public float MissileRadius;
+    public LayerMask Enemies;
+    
 
 
 
@@ -23,12 +26,33 @@ public class MissileScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
 
+        
 
-
-       
-       // Instantiate(impactEffect, transform.position, transform.rotation);
+      
         Destroy(gameObject, duration);
 
+
+    }
+
+    private void Update()
+    {
+
+        /*Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(MissilePos.position, MissileRadius);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        {
+            enemiesToDamage[i].GetComponent<Enemies>().TakeDamage(damage);
+
+
+        }*/
+
+
+
+    }
+
+    void OnTriggerEnter2D()
+    {
+
+        Destroy(gameObject);
 
     }
 

@@ -10,12 +10,6 @@ public class Chara_Controller_Missile : MonoBehaviour
     public Animator anim;
     public bool StateMissile = false; 
     public bool BaseState = true;
- 
-
-
-
-    public float weaponRange = 5f;
-    public float damage = 100f;
     public int missileNumber = 0;
    
 
@@ -48,7 +42,7 @@ public class Chara_Controller_Missile : MonoBehaviour
 
 
      
-        if (Input.GetButtonDown("Fire") && StateMissile == true)
+        if (Input.GetButtonDown("Fire") && StateMissile == true && missileNumber > 0)
         {
             fireMissile();
 

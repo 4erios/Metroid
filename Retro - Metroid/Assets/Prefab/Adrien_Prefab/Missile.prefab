@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7099e979685a9144f96d9c35f4071624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   rb: {fileID: 535513837194477092}
   damage: 40
   impactEffect: {fileID: 0}
-  duration: 0.1
+  duration: 0.6
 --- !u!95 &5808386279136762252
 Animator:
   serializedVersion: 3
