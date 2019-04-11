@@ -7,7 +7,7 @@ public class Gate : MonoBehaviour
     [SerializeField]
     private bool bGateIsOpen = false;
     private bool bPlayerInside = false;
-    private Gaùe
+    //private Gaùe
     public GameObject[] gate;
 
 
