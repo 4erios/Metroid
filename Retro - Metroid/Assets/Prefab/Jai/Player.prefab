@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 2739914951834655233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.51, y: 3.45, z: 0.013671875}
-  m_LocalScale: {x: 5, y: 5, z: 0}
+  m_LocalScale: {x: 6.3, y: 6.3, z: 0}
   m_Children:
   - {fileID: 2739914951479932526}
   - {fileID: 2739914952154055831}
@@ -119,10 +119,10 @@ MonoBehaviour:
   animator: {fileID: 262638437}
   moveSpeed: 8
   jumpForce: 20
-  jumpNextForce: 10
+  jumpNextForce: 16.5
   gravity: 70
-  timeMinimumBeforeIncreaseJump: 0.1
-  isGrounded: 0
+  timeMinimumBeforeIncreaseJump: 0.12
+  isGrounded: 1
   layerGround:
     serializedVersion: 2
     m_Bits: 256
@@ -164,16 +164,16 @@ Rigidbody2D:
   m_GameObject: {fileID: 2739914951834655233}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 66f677432ffb00f468e13898e55a8e35, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &262638435
 BoxCollider2D:
