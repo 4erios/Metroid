@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu (fileName = "EnemiesBaseStats", menuName = "Stats")]
 public class EnemiesBaseStats : ScriptableObject
 {
     public float enemyHealthPoints;
@@ -10,6 +10,6 @@ public class EnemiesBaseStats : ScriptableObject
     public float enemyDamages;
     public float enemyAttackRange;
 
-    public RuntimeAnimatorController enemyAnimator;
+    public bool touched;
 
 }
