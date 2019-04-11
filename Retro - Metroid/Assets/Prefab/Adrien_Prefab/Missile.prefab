@@ -135,8 +135,8 @@ MonoBehaviour:
   speed: 8
   rb: {fileID: 535513837194477092}
   damage: 40
-  impactEffect: {fileID: 0}
   duration: 0.6
+  anim: {fileID: 5808386279136762252}
 --- !u!95 &5808386279136762252
 Animator:
   serializedVersion: 3
