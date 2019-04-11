@@ -6,12 +6,11 @@ public class Player_sphere : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    /*public BoxCollider2D samus;
-    public BoxCollider2D boule;*/
+
     public bool collision;
     Animator anim;
     public GameObject bombePrefab;
-    public Transform bombe;
+    public Transform bombePosition;
     public GameObject ExplosionPrefab;
 
     void Start()
@@ -48,22 +47,13 @@ public class Player_sphere : MonoBehaviour
         if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
             Debug.Log("JE CHIE UNE BOMBE");
-            Instantiate(bombePrefab, bombe.position, bombe.rotation);
-            TimeBeforeExplosion();
+            Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
+            //StartCoroutine(TimeBeforeExplosion());
 
          
 
         }
-        /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)
-            {
-
-            boule.isTrigger = true;
-            samus.isTrigger = false;
-            Debug.Log("Je redeviens Samus");
-
-        }*/
-
-
+    
 
     }
 
@@ -78,12 +68,6 @@ public class Player_sphere : MonoBehaviour
     {
 
         yield return new WaitForSeconds(1);
-        Instantiate(ExplosionPrefab, bombe.position, bombe.rotation);
-        Destroy(bombePrefab);
-
-
-
-
-
+        Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BombeScript : MonoBehaviour
 {
-  /*  public GameObject ExplosionPrefab;
-    public Transform bombe;
+    public GameObject ExplosionPrefab;
+    public Transform bombePosition;
     public GameObject BombePrefab;
 
     // Start is called before the first frame update
@@ -17,28 +17,22 @@ public class BombeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        StartCoroutine(TimeBeforeExplosion());
 
     }
 
 
 
-    void Explosion()
+    IEnumerator TimeBeforeExplosion()
     {
 
-        IEnumerator TimeBeforeExplosion()
-        {
+        yield return new WaitForSeconds(1);
+        Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
+        Destroy(gameObject);
+    }
 
-            yield return new WaitForSeconds(1);
-            Instantiate(ExplosionPrefab, bombe.position, bombe.rotation);
-            Destroy(BombePrefab);
-
-          
-
-
-
-        }
+ 
 
     }
-    */
-}
+   
+
