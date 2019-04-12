@@ -743,31 +743,16 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2102157208}
-    - target: {fileID: 4688775261268805662, guid: f5aafaa7f6d1b23499fea7f806315692,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSelectedGameObject
-      objectReference: {fileID: 0}
     - target: {fileID: 6735835558335168118, guid: f5aafaa7f6d1b23499fea7f806315692,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1286493786}
-    - target: {fileID: 6735835558335168118, guid: f5aafaa7f6d1b23499fea7f806315692,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Continue
-      objectReference: {fileID: 0}
     - target: {fileID: 2977023071929411312, guid: f5aafaa7f6d1b23499fea7f806315692,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2102157208}
-    - target: {fileID: 2977023071929411312, guid: f5aafaa7f6d1b23499fea7f806315692,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSelectedGameObject
-      objectReference: {fileID: 0}
     - target: {fileID: 4960885747262358158, guid: f5aafaa7f6d1b23499fea7f806315692,
         type: 3}
       propertyPath: eS
