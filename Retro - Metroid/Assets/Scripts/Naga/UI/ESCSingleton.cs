@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ESCSingleton : MonoBehaviour
 {
-    #region Démarrage
+    /*#region Démarrage
     public static ESCSingleton manager;
 
     private void Awake()
@@ -22,13 +22,18 @@ public class ESCSingleton : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
-    #endregion
+    #endregion*/
 
     public GameObject escapeMenu;
     public bool bpause;
 
     private void Update()
     {
+        if (escapeMenu == null)
+        {
+            escapeMenu = GameObject.FindGameObjectWithTag("Menu");
+        }
+
         if (!escapeMenu.activeInHierarchy)
         {
 

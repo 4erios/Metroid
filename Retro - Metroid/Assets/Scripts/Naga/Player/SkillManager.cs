@@ -47,6 +47,8 @@ public class SkillManager : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         if (skillGravity)
             player.GetComponent<MoveJump>().haveGravityBelt = true;
 

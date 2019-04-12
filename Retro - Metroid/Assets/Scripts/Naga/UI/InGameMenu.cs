@@ -17,6 +17,8 @@ public class InGameMenu : MonoBehaviour
     void Start()
     {
         storeSelected = firstButton;
+        if(this.gameObject.tag == "Menu")
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
