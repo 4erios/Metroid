@@ -35,6 +35,7 @@ public class EnemyClass : MonoBehaviour
         {
             //to deal damages : PlayerLifeSystem.TakeDamage(damages)
             GetComponent<PlayerLifeSystem>().TakeDamage(damages);
+            
         }
     }
 
