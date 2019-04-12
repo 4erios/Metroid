@@ -3,7 +3,12 @@ guid: 73fbe2c7c42b69d4dbf92d3d78e4a547
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - linkedCamera: {instanceID: 0}
+  - "pr\xE9fabCameraH": {fileID: 7806666863440254102, guid: 64c837bfebde9e946b3c1dab4ff858ec,
+      type: 3}
+  - "pr\xE9fabCameraV": {fileID: 2314905778402551987, guid: 67c5de0ee5786fd45b85319a7ff1c4e0,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

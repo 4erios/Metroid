@@ -29,7 +29,7 @@ public class SetupPlayerTransition : MonoBehaviour
 
             else
             {
-                gate.GetComponent<Gate>().TransitionEnding();
+                //gate.GetComponent<Gate>().TransitionEnding();
                 activetransition = false;
                 cooldown = 0;
             }

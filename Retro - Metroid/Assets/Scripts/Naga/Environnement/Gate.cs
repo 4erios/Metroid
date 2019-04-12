@@ -8,8 +8,6 @@ public class Gate : MonoBehaviour
     [SerializeField]
     private bool bGateIsOpen = false;
     private bool bPlayerInside = false;
-    [SerializeField]
-    private GameObject transitionObject;
     public GameObject[] gate;
     private GameObject player;
     private GameObject cam;
@@ -23,7 +21,7 @@ public class Gate : MonoBehaviour
 
     private void Update()
     {
-        cam = GameObject.Find("Camera").GetComponent<CameraScript>().actualCam;
+        // cam = GameObject.Find("Camera").GetComponent<CameraScript>().actualCam;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,19 +30,28 @@ public class Gate : MonoBehaviour
         {
             GateInteract();
             StartCoroutine(OpenGate());
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
 
         if (other.tag == "Player")
         {
             bPlayerInside = true;
-            PréTransition();
+            transitionCam.GetComponent<CinemachineVirtualCamera>().Priority = 10;
+            transitionCam.GetComponent<CinemachineVirtualCamera>().Follow = GameObject.FindWithTag("Player").transform;
+            //PréTransition();
         }
 
         else
         {
-            bPlayerInside = false;
+            //bPlayerInside = false;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        bPlayerInside = false;
+        transitionCam.GetComponent<CinemachineVirtualCamera>().Priority = -10;
+        transitionCam.GetComponent<CinemachineVirtualCamera>().Follow = null;
     }
 
     private void GateInteract()
@@ -57,7 +64,7 @@ public class Gate : MonoBehaviour
         }
     }
 
-    private void PréTransition()
+    /*private void PréTransition()
     {
         transitionObject.transform.position = player.transform.position;
         player.SetActive(false);
@@ -75,7 +82,7 @@ public class Gate : MonoBehaviour
         transitionObject.GetComponent<TransitionEnCours>().transitionActive = false;
         transitionObject.transform.position = this.gameObject.transform.position;
         GameObject.Find("Camera").transform.position = player.transform.position;
-    }
+    }*/
 
     IEnumerator OpenGate()
     {
