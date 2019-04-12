@@ -88,6 +88,7 @@ public class PlayerLifeSystem : DamageSystem
     {
         canBeHit = false;
 
+        this.gameObject.GetComponent<colorChangeScript>().StartHitEffect(time);
         yield return new WaitForSeconds(time);
 
         canBeHit = true;

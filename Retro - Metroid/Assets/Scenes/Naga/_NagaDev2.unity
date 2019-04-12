@@ -369,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 9160212613318673377, guid: eaabe7b5b2430914abc330bd8ab7ae99,
         type: 3}
       propertyPath: m_Name
-      value: Menu Pause Singleton
+      value: Menu Pause Pas Singleton
       objectReference: {fileID: 0}
     - target: {fileID: 9160212613318673383, guid: eaabe7b5b2430914abc330bd8ab7ae99,
         type: 3}

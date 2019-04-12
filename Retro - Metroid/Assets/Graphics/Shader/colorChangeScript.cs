@@ -9,6 +9,8 @@ public class colorChangeScript : MonoBehaviour
     Color[] mSpriteColors;
 
     SpriteRenderer mSpriteRenderer;
+    private IEnumerator coroutine;
+    
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class colorChangeScript : MonoBehaviour
 
         colorSwapTex.Apply();
 
-        
+
 
         mSpriteRenderer.material.SetTexture("_SwapTex", colorSwapTex);
 
@@ -45,10 +47,10 @@ public class colorChangeScript : MonoBehaviour
     {
         Armor = 216,
         Gun = 0,
-        Cloth =252,
+        Cloth = 252,
     }
 
-    public void SwapColor(SwapIndex index, Color color)
+    private void SwapColor(SwapIndex index, Color color)
     {
         mSpriteColors[(int)index] = color;
         mColorSwapTex.SetPixel((int)index, 0, color);
@@ -56,9 +58,9 @@ public class colorChangeScript : MonoBehaviour
 
     public void InitialColors()
     {
-        SwapColor(SwapIndex.Armor, new Color(216,40,0));
-        SwapColor(SwapIndex.Gun, new Color(0,148,0));
-        SwapColor(SwapIndex.Cloth, new Color(252,152,56));
+        SwapColor(SwapIndex.Armor, new Color(216, 40, 0));
+        SwapColor(SwapIndex.Gun, new Color(0, 148, 0));
+        SwapColor(SwapIndex.Cloth, new Color(252, 152, 56));
         mColorSwapTex.Apply();
     }
 
@@ -82,21 +84,33 @@ public class colorChangeScript : MonoBehaviour
         mColorSwapTex.Apply();
     }
 
-    public void NormalBullet ()
+    public void NormalBullet()
     {
         ClearColor(SwapIndex.Gun);
         mColorSwapTex.Apply();
     }
 
+    private IEnumerator HitEffect(float time, float flashTime)
+    {
+        for (float f = time; f >= 0; f -= (2*flashTime))
+        {
+            SwapAllSpritesColorsTemporarily(Color.white);
+            yield return new WaitForSeconds(flashTime);
+            ResetAllSpritesColors();
+            yield return new WaitForSeconds(flashTime);
+        }
+        ResetAllSpritesColors();
+    }
+
     //UTILITY
-    public void ResetAllSpritesColors()
+    private void ResetAllSpritesColors()
     {
         for (int i = 0; i < mColorSwapTex.width; ++i)
             mColorSwapTex.SetPixel(i, 0, mSpriteColors[i]);
         mColorSwapTex.Apply();
     }
 
-    public void ClearColor(SwapIndex index)
+    private void ClearColor(SwapIndex index)
     {
         Color c = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         mSpriteColors[(int)index] = c;
@@ -104,14 +118,14 @@ public class colorChangeScript : MonoBehaviour
         mColorSwapTex.Apply();
     }
 
-    public void SwapAllSpritesColorsTemporarily(Color color)
+    private void SwapAllSpritesColorsTemporarily(Color color)
     {
         for (int i = 0; i < mColorSwapTex.width; ++i)
             mColorSwapTex.SetPixel(i, 0, color);
         mColorSwapTex.Apply();
     }
 
-    public void ClearAllSpritesColors()
+    private void ClearAllSpritesColors()
     {
         for (int i = 0; i < mColorSwapTex.width; ++i)
         {
@@ -120,4 +134,23 @@ public class colorChangeScript : MonoBehaviour
         }
         mColorSwapTex.Apply();
     }
+
+    
+
+    public void StartHitEffect(float time , float flashTime =0.1f)
+    {
+        coroutine = HitEffect(time, flashTime);
+        StartCoroutine(coroutine);
+    }
+
+    public void Update()
+    {
+      
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            StartHitEffect(2f);
+        }
+    }
 }
+    
