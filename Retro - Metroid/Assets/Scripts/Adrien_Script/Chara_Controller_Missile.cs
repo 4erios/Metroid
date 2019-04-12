@@ -9,44 +9,51 @@ public class Chara_Controller_Missile : MonoBehaviour
     public Transform canon;
     public Animator anim;
 
- 
-
-
-
-    public float weaponRange = 5f;
-    float nextFire = 0.5f;
-    public float damage = 100f;
+    public colorChangeScript ScriptChangeColor;
+    private bool StateMissile = false; 
+    
     public int missileNumber = 0;
-   
+    static public bool BaseState {get; private set;}
 
+    private void Awake()
+    {
+        BaseState = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Switch entre tir et missile
         if (Input.GetButtonDown("Switch_Weapon"))
         {
-            anim.SetBool("State Missile", true);
-         
+           if (BaseState == true)
+           {
+                StateMissile = true;
+                BaseState = false;
+
+                ScriptChangeColor.MissileColors();
+                Debug.Log("Mode Missile ON");
+           }
+           else
+           {
+                BaseState = true;
+                StateMissile = false;
+
+                ScriptChangeColor.NormalBullet();
+
+                Debug.Log("Mode Tir ON");
+           }
         }
 
-
-     
-        if (Input.GetButtonDown("Fire") && anim.GetBool("State Missile") == true)
+        if (Input.GetButtonDown("Fire") && StateMissile == true && missileNumber > 0 && anim.GetBool("Boule_State") == false)
         {
             fireMissile();
-
         }
-
-
     }
-
 
     void fireMissile ()
     {
         missileNumber--;
         Instantiate(missilePrefab, canon.position, canon.rotation);
-       
-
     }
 }

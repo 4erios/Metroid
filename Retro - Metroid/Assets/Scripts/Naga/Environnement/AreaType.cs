@@ -48,7 +48,7 @@ public class AreaType : MonoBehaviour
 
             linkedCamera.GetComponent<CinemachineVirtualCamera>().Follow = GameObject.FindWithTag("Player").transform;
 
-            SetupLinkedArea();
+            // SetupLinkedArea();
         }
     }
 
