@@ -40,6 +40,7 @@ public class MoveJump : MonoBehaviour
     private bool canChangeGravity;
 
     public colorChangeScript scriptChangeColor;
+    [HideInInspector]
     public bool haveGravityBelt = false;
 
 

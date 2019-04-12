@@ -13,6 +13,15 @@ public class SkillManager : MonoBehaviour
     [SerializeField]
     private bool skillGravity = false;
 
+    private void Start()
+    {
+        if(skillBombe || skillGravity || skillBoule || skillMissile)
+        {
+            Debug.LogError("One or more skill are enable");
+            Debug.Break();
+        }
+    }
+
     void Update()
     {
         if (skillGravity)
@@ -22,7 +31,7 @@ public class SkillManager : MonoBehaviour
             this.gameObject.GetComponent<Chara_Controller_Missile>().enabled = true;
 
         if (skillBoule)
-            this.gameObject.GetComponent<Player_sphere>().enabled = true;
+            this.gameObject.GetComponent<Player_sphere>().haveSphereMode = true;
 
         if (skillBombe)
             this.gameObject.GetComponent<Player_sphere>().haveSphereBomb = true;
