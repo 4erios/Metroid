@@ -10,10 +10,12 @@ public class Freezer : MonoBehaviour
     public Fire fire;
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -21,6 +23,12 @@ public class Freezer : MonoBehaviour
     /// </summary>
     public void MisterFreeze ()
     {
+        anim.SetBool("Boule_State", false);
+        anim.SetBool("IsJumping", false);
+        anim.SetBool("IsFiring", false);
+        anim.SetBool("IsLookingUp", false);
+        anim.SetFloat("Speed", 0);
+        anim.Play("Player_Idle");
         rb.velocity = Vector2.zero;
         missileFire.enabled = false;
         moveJump.enabled = false;
@@ -39,9 +47,10 @@ public class Freezer : MonoBehaviour
         fire.enabled = true;
     }
 
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             MisterFreeze();
         }
