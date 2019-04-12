@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 82582038}
   - component: {fileID: 4445114010193874289}
   - component: {fileID: 7897419149941101605}
+  - component: {fileID: 4240746684890556367}
   m_Layer: 0
   m_Name: Player - Adrien
   m_TagString: Untagged
@@ -95,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 2739914951834655233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.51, y: 3.45, z: 0.013671875}
-  m_LocalScale: {x: 5, y: 5, z: 0}
+  m_LocalScale: {x: 6.3, y: 6.3, z: 0}
   m_Children:
   - {fileID: 2739914951479932526}
   - {fileID: 2739914952154055831}
@@ -135,7 +136,7 @@ MonoBehaviour:
   fallMultiplier: 3
   lowJumpMultiplier: 2
   jumpTime: 0.2
-  inverseGravity: 0
+  scriptChangeColor: {fileID: 0}
 --- !u!114 &5420891327403145984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,8 +320,14 @@ MonoBehaviour:
   collision: 0
   bombePrefab: {fileID: 3607699686531387954, guid: df2a7afdc3c5e4c498df9a397330cb93,
     type: 3}
-  bombePosition: {fileID: 0}
-  ExplosionPrefab: {fileID: 0}
+  bombePosition: {fileID: 950289088605007983}
+  ExplosionPrefab: {fileID: 9103756224047172597, guid: 6749829bb25e874458f45f054d290e4f,
+    type: 3}
+  CeilingCheck: {fileID: 2739914952154055831}
+  Radius: 5
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7897419149941101605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,10 +343,21 @@ MonoBehaviour:
   missilePrefab: {fileID: 535513837194477089, guid: 070aac6a34982df4080d8728a3fbeb91,
     type: 3}
   canon: {fileID: 3792366469320567708}
-  anim: {fileID: 0}
-  weaponRange: 5
-  damage: 100
+  anim: {fileID: 262638437}
+  ScriptChangeColor: {fileID: 4240746684890556367}
   missileNumber: 0
+--- !u!114 &4240746684890556367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739914951834655233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dee9a3e09a77248ab155d97d985047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2739914952154055824
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,11 +666,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.14
       objectReference: {fileID: 0}
-    - target: {fileID: 7408645515142691779, guid: 97210def5770a78428be3a385c40ff0b,
-        type: 3}
-      propertyPath: bombe
-      value: 
-      objectReference: {fileID: 4717586591714744447}
     - target: {fileID: 7408645515142691777, guid: 97210def5770a78428be3a385c40ff0b,
         type: 3}
       propertyPath: canon
@@ -673,12 +686,6 @@ PrefabInstance:
 --- !u!4 &4717586591116610700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7408645515142691790, guid: 97210def5770a78428be3a385c40ff0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2857806459452274498}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4717586591714744447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7408645514527616829, guid: 97210def5770a78428be3a385c40ff0b,
     type: 3}
   m_PrefabInstance: {fileID: 2857806459452274498}
   m_PrefabAsset: {fileID: 0}

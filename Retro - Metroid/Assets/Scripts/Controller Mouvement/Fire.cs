@@ -70,7 +70,7 @@ public class Fire : MonoBehaviour
 
     void checkIfFire ()
     {
-        if (Input.GetButtonDown("Fire") && !wait) 
+        if (Input.GetButtonDown("Fire") && !wait && Chara_Controller_Missile.BaseState && animator.GetBool("Boule_State") == false) 
         {
             animator.SetBool("IsFiring", true);
             Shoot(timeBetweenBullet);
@@ -79,12 +79,12 @@ public class Fire : MonoBehaviour
             coroutineDeux = waitBeforeSpam (timeBeforeShootSpeedImprove);
             StartCoroutine(coroutineDeux);
         }
-        else if (Input.GetButtonDown("Fire"))
+        else if (Input.GetButtonDown("Fire") && Chara_Controller_Missile.BaseState && animator.GetBool("Boule_State") == false)
         {
             animator.SetBool("IsFiring", true);
             shootWhenTimeEnd = true;
         }
-        else if (Input.GetButton("Fire"))
+        else if (Input.GetButton("Fire") && Chara_Controller_Missile.BaseState && animator.GetBool("Boule_State") == false)
         {
             if (!shootImprove && !wait)
             {

@@ -27,19 +27,32 @@ public class Player_sphere : MonoBehaviour
     void Update()
     {
         // Permet le passage en boule
-        if (Input.GetAxis("Vertical") < -0.1f)
+
+        if (!MoveJump.inverseGravity)
         {
-            anim.SetBool("Boule_State", true);
-            
-    
+            if (Input.GetAxis("Vertical") < -0.5f)
+            {
+                anim.SetBool("Boule_State", true);
+            }
+
+            if (Input.GetAxis("Vertical") > 0.3f && anim.GetBool("Collision")==false )
+            {
+                anim.SetTrigger("Haut");
+                anim.SetBool("Boule_State", false);
+            }
         }
-
-
-        if (Input.GetAxis("Vertical") > 0.1f)
+        else
         {
-            anim.SetTrigger("Haut");
-            anim.SetBool("Boule_State", false);
-         
+            if (Input.GetAxis("Vertical") > 0.5f)
+            {
+                anim.SetBool("Boule_State", true);
+            }
+
+            if (Input.GetAxis("Vertical") < -0.3f && anim.GetBool("Collision") == false)
+            {
+                anim.SetTrigger("Haut");
+                anim.SetBool("Boule_State", false);
+            }
         }
 
 
@@ -51,11 +64,10 @@ public class Player_sphere : MonoBehaviour
         }
 
         // Permet de poser les bombes
-        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire"))
+        {
 
-        
             Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
-   
         }
 
         // Permet de bloquer la boule si elle détecte des collisions
@@ -70,7 +82,14 @@ public class Player_sphere : MonoBehaviour
         // Permet de bloquer la boule si elle détecte des collisions
         if (anim.GetBool("Boule_State") == true)
         {
-           
+            /*Collider2D[] colliders = Physics2D.OverlapCircleAll(CeilingCheck.position, Radius, Ground);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject && colliders[i].gameObject != null)
+                {
+                }
+            }*/
+
             if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, Ground))
             {
                 anim.SetBool("Collision", true);
@@ -78,19 +97,14 @@ public class Player_sphere : MonoBehaviour
             }
             else
             {
-
                 anim.SetBool("Collision", false);
             }
+
             // Permet d'empêcher à la boule de sauter
             anim.SetBool("IsJumping", false);
 
-
-
-
-
         }
 
-   
     }
 
 

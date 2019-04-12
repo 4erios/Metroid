@@ -11,9 +11,6 @@ public class MissileScript : MonoBehaviour
     public int damage = 40;
     public float duration = 0.1f;
     Animator anim;
-    
-
-
 
     void Start()
     {
@@ -22,17 +19,6 @@ public class MissileScript : MonoBehaviour
         Destroy(gameObject, duration);
         anim.SetTrigger("Explosion");
     }
-
-
-    void Update()
-    {
-
-    
-
-
-
-    }
-
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
@@ -45,7 +31,5 @@ public class MissileScript : MonoBehaviour
             Destroy(gameObject);
             anim.SetTrigger("Explosion");
         }
-
-
     }
 }  

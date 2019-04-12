@@ -82,9 +82,9 @@ public class colorChangeScript : MonoBehaviour
         mColorSwapTex.Apply();
     }
 
-    public void Normalbullet ()
+    public void NormalBullet ()
     {
-        SwapColor(SwapIndex.Gun, new Color(0, 148, 0));
+        ClearColor(SwapIndex.Gun);
         mColorSwapTex.Apply();
     }
 
