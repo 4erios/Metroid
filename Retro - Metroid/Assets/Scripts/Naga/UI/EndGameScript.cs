@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LavaScript : MonoBehaviour
+public class EndGameScript : MonoBehaviour
 {
-    [SerializeField]
-    private int damage = 5;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<PlayerLifeSystem>().TakeDamage(damage);
+            GameObject.Find("Skill Manager Singleton").GetComponent<SkillManager>().GameReset();
+            SceneManager.LoadScene(3);
         }
     }
 }
