@@ -37,6 +37,8 @@ public class SkillLoot : MonoBehaviour
         player.GetComponent<SkillManager>().UnlockedSkill(skillName);
         yield return new WaitForSeconds(3f);
         player.GetComponent<Freezer>().Barbecue();
+        if (skillName == "Boule")
+            Destroy(gameObject);
         this.gameObject.GetComponent<SpriteRenderer>().sprite = lootedSprite;
     }
 }

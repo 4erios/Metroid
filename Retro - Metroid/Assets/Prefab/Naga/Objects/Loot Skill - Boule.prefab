@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.924
       objectReference: {fileID: 0}
     - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.482
       objectReference: {fileID: 0}
     - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
         type: 3}
@@ -67,10 +67,73 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.9704084
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.9704084
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422567, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.9704084
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422568, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300028, guid: e204d4f410937f54880fc1339f16234b,
+        type: 3}
+    - target: {fileID: 3872538185048422564, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422564, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0011417791
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.002103895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.12790097
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872538185048422565, guid: a83c18493b4ec264783e07ad35ba01e8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.14639997
+      objectReference: {fileID: 0}
     - target: {fileID: 3872538185048422566, guid: a83c18493b4ec264783e07ad35ba01e8,
         type: 3}
       propertyPath: skillName
       value: Boule
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3872538185048422563, guid: a83c18493b4ec264783e07ad35ba01e8, type: 3}
+    - {fileID: 3872538185048422564, guid: a83c18493b4ec264783e07ad35ba01e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a83c18493b4ec264783e07ad35ba01e8, type: 3}
