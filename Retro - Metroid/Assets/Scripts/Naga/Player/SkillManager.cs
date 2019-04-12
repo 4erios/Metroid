@@ -47,17 +47,22 @@ public class SkillManager : MonoBehaviour
 
     void Update()
     {
-        if (skillGravity)
-            player.GetComponent<MoveJump>().haveGravityBelt = true;
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        if (skillMissile)
-            player.GetComponent<Chara_Controller_Missile>().enabled = true;
+        if (player != null)
+        {
+            if (skillGravity)
+                player.GetComponent<MoveJump>().haveGravityBelt = true;
 
-        if (skillBoule)
-            player.GetComponent<Player_sphere>().haveSphereMode = true;
+            if (skillMissile)
+                player.GetComponent<Chara_Controller_Missile>().enabled = true;
 
-        if (skillBombe)
-            player.GetComponent<Player_sphere>().haveSphereBomb = true;
+            if (skillBoule)
+                player.GetComponent<Player_sphere>().haveSphereMode = true;
+
+            if (skillBombe)
+                player.GetComponent<Player_sphere>().haveSphereBomb = true;
+        }
     }
 
     public void UnlockedSkill(string skillName)

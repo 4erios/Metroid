@@ -6,7 +6,7 @@ public class PunchingBallStateManager : EnemyClass
 {
     //identification des stats
     public EnemiesBaseStats stats;
-    //private float health;
+    private float enemyhealth;
 
     EnemyClass enemyClass;
     private RuntimeAnimatorController punchingballanims;
@@ -16,13 +16,16 @@ public class PunchingBallStateManager : EnemyClass
     {
         //récupération des stats du scriptable
         health = stats.enemyHealthPoints;
-
-        punchingballanims = stats.enemyAnimator;
+        //enemyhealth = health;
+       
     }
 
     void Update()
     {
-       
+       if (health <= 0)
+        {
+            Death();
+        }
     }
 
 }
