@@ -194,53 +194,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1091536033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1091536035}
-  - component: {fileID: 1091536034}
-  m_Layer: 0
-  m_Name: InvincibleEnemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1091536034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091536033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc6dfaeb158192439f152787106239a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invincibleEnemyStats: {fileID: 11400000, guid: 7f4956084f4b5d84284472bf31e5ad7e,
-    type: 2}
-  trajectPointA: {fileID: 0}
-  trajectPointB: {fileID: 0}
---- !u!4 &1091536035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091536033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8264313, y: 1.2298931, z: -0.04296875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1254894661
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e012c3e0c0194a846b3c4e4478d3205b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyClass: {fileID: 1809123196}
 --- !u!4 &1254894663
 Transform:
   m_ObjectHideFlags: 0
@@ -358,6 +312,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f54a5cf794e9b0546b87c5ffeab09526, type: 3}
+--- !u!114 &1809123196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 187212459917169297, guid: 3cf616d833f4bf649bc7c6e26066a476,
+    type: 3}
+  m_PrefabInstance: {fileID: 187212461008366068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b518e9a0eceb54d852e07b9fb7f8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864438533
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,3 +575,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf616d833f4bf649bc7c6e26066a476, type: 3}
+--- !u!1001 &2539753819500792473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2539753820591148600, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_Name
+      value: InvincibleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8264313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2298931
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539753820591148602, guid: 1dc9ecd6aa16cc24a97dd26133ec0024,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1dc9ecd6aa16cc24a97dd26133ec0024, type: 3}

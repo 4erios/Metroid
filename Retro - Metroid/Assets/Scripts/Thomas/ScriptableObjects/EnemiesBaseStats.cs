@@ -7,7 +7,7 @@ public class EnemiesBaseStats : ScriptableObject
 {
     public float enemyHealthPoints;
 
-    public float enemyDamages;
+    public int enemyDamages;
 
     public LayerMask layertoHurt;
 

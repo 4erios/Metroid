@@ -16,13 +16,13 @@ public class PunchingBallStateManager : EnemyClass
     {
         //récupération des stats du scriptable
         health = stats.enemyHealthPoints;
-        enemyhealth = health;
+        //enemyhealth = health;
        
     }
 
     void Update()
     {
-       if (enemyhealth <= 0)
+       if (health <= 0)
         {
             Death();
         }
