@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class SkillLoot : MonoBehaviour
 {
-    private bool skill = false;
     private GameObject player;
     [SerializeField]
     private Sprite lootedSprite;
     [SerializeField]
     private string skillName;
     private bool destroyed = false;
+    private GameObject skillManager;
 
     private void Start()
     {
+        skillManager = GameObject.Find("Skill Manager Singleton");
+
         if (skillName == "")
         {
             Debug.LogError("Complete the Skill Name on" + this.gameObject.name);
@@ -34,7 +36,7 @@ public class SkillLoot : MonoBehaviour
     {
         destroyed = true;
         player.GetComponent<Freezer>().MisterFreeze();
-        player.GetComponent<SkillManager>().UnlockedSkill(skillName);
+        skillManager.GetComponent<SkillManager>().UnlockedSkill(skillName);
         yield return new WaitForSeconds(3f);
         player.GetComponent<Freezer>().Barbecue();
         if (skillName == "Boule")

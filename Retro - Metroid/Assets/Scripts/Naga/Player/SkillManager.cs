@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    #region Démarrage
+    public static SkillManager manager;
+
+    private void Awake()
+    {
+        if (manager == null)
+        {
+            manager = this;
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+    }
+    #endregion
+
     [SerializeField]
     private bool skillBoule = false;
     [SerializeField]
@@ -12,9 +32,12 @@ public class SkillManager : MonoBehaviour
     private bool skillMissile = false;
     [SerializeField]
     private bool skillGravity = false;
+    private GameObject player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         if(skillBombe || skillGravity || skillBoule || skillMissile)
         {
             Debug.LogError("One or more skill are enable");
@@ -25,16 +48,16 @@ public class SkillManager : MonoBehaviour
     void Update()
     {
         if (skillGravity)
-            this.gameObject.GetComponent<MoveJump>().haveGravityBelt = true;
+            player.GetComponent<MoveJump>().haveGravityBelt = true;
 
         if (skillMissile)
-            this.gameObject.GetComponent<Chara_Controller_Missile>().enabled = true;
+            player.GetComponent<Chara_Controller_Missile>().enabled = true;
 
         if (skillBoule)
-            this.gameObject.GetComponent<Player_sphere>().haveSphereMode = true;
+            player.GetComponent<Player_sphere>().haveSphereMode = true;
 
         if (skillBombe)
-            this.gameObject.GetComponent<Player_sphere>().haveSphereBomb = true;
+            player.GetComponent<Player_sphere>().haveSphereBomb = true;
     }
 
     public void UnlockedSkill(string skillName)
@@ -50,5 +73,13 @@ public class SkillManager : MonoBehaviour
 
         else if (skillName == "Bombe" && !skillBombe)
             skillBombe = true;
+    }
+
+    public void GameReset()
+    {
+        skillBombe = false;
+        skillBoule = false;
+        skillGravity = false;
+        skillMissile = false;
     }
 }
