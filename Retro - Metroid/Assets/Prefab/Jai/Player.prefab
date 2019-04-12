@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 1099083569}
   - component: {fileID: 771601335736574158}
   - component: {fileID: 8365004522843837696}
+  - component: {fileID: 1370153077}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -358,6 +359,22 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1370153077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739914951834655233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066aa67da8c090d438c2f5993bcc2ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missileFire: {fileID: 771601335736574158}
+  moveJump: {fileID: 2739914951834655243}
+  bouleScript: {fileID: 8365004522843837696}
+  fire: {fileID: 5420891327403145984}
 --- !u!1 &2739914952154055824
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +428,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7261461590681646378}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.018, y: 0.217, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children: []
