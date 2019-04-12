@@ -46,12 +46,17 @@ public class ESCSingleton : MonoBehaviour
 
             if (Input.GetButtonDown("Start") || Input.GetButtonUp("Cancel"))
             {
-                escapeMenu.SetActive(false);
-                Pause();
-                Time.timeScale = 1;
+                Continue();
             }
 
         }
+    }
+
+    public void Continue()
+    {
+        escapeMenu.SetActive(false);
+        Pause();
+        Time.timeScale = 1;
     }
 
     public void Pause()
