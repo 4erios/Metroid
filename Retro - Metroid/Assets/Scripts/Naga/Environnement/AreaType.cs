@@ -8,9 +8,12 @@ public class AreaType : MonoBehaviour
 {
     [SerializeField]
     private string areaType;
+    private bool canBeActive = true;
 
     private void Start()
     {
+        this.gameObject.layer = 2;
+
         if (areaType != "V" && areaType != "H")
         {
             Debug.LogError("Error with area type on : " + this.gameObject.name); // Remplire le champ "Area Type" sur l'objet afin de régler la caméra H ou V

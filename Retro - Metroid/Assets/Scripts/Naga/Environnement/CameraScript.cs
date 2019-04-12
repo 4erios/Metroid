@@ -8,15 +8,15 @@ public class CameraScript : MonoBehaviour
     public Transform player; // Le joueur
     public GameObject cameraH; // Camera Horizontal
     public GameObject cameraV; // Camera Vertical
-    [HideInInspector]
     public GameObject actualCam; //Caméra actuelle
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        resetCam();
     }
 
-    private void Update()
+    public void resetCam()
     {
         if(areaType == "H")
         {

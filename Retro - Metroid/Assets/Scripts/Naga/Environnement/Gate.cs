@@ -19,7 +19,11 @@ public class Gate : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        cam = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraScript>().actualCam;
+    }
+
+    private void Update()
+    {
+        cam = GameObject.Find("Camera").GetComponent<CameraScript>().actualCam;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,7 +60,7 @@ public class Gate : MonoBehaviour
     private void PréTransition()
     {
         transitionObject.transform.position = player.transform.position;
-        player.GetComponent<SpriteRenderer>().enabled = false;
+        player.SetActive(false);
         cam.SetActive(false);
         transitionCam.SetActive(true);
         transitionCam.GetComponent<CinemachineVirtualCamera>().Follow = transitionObject.transform;
@@ -64,11 +68,13 @@ public class Gate : MonoBehaviour
 
     public void TransitionEnding()
     {
-        player.transform.position = transitionObject.transform.position;
-        player.GetComponent<SpriteRenderer>().enabled = true;
+        player.SetActive(true);
+        player.transform.position = transitionObject.transform.position;;
         transitionCam.SetActive(false);
         cam.SetActive(true);
+        transitionObject.GetComponent<TransitionEnCours>().transitionActive = false;
         transitionObject.transform.position = this.gameObject.transform.position;
+        GameObject.Find("Camera").transform.position = player.transform.position;
     }
 
     IEnumerator OpenGate()

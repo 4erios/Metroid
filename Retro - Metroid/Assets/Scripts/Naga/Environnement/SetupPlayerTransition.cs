@@ -3,32 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class SetupPlayerTransition : MonoBehaviour
 {
     [SerializeField]
     private GameObject opposite; //Partie opposée de la porte
     public bool playerHere;
+    private bool activetransition = false;
     [SerializeField]
     private GameObject gate;
     [SerializeField] // Objet de transition
     private GameObject transitionObject;
+    private float cooldown;
 
     private void Update()
     {
-        if (transitionObject.transform.position.x == opposite.transform.position.x)
+        if (activetransition)
         {
-            gate.GetComponent<Gate>().TransitionEnding();
+            transitionObject.transform.position = Vector2.Lerp(transitionObject.transform.position, opposite.transform.position, cooldown);
+
+            if (cooldown < 1)
+            {
+                cooldown = cooldown + 0.05f;
+            }
+
+            else
+            {
+                gate.GetComponent<Gate>().TransitionEnding();
+                activetransition = false;
+                cooldown = 0;
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject == transitionObject.gameObject && !other.GetComponent<TransitionEnCours>().transitionActive)
+        {
+            Transition();
+            other.GetComponent<TransitionEnCours>().transitionActive = true;
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Transition()
     {
-        if(other.name == transitionObject.name)
-            Transition(other.gameObject);
-    }
-
-    private void Transition(GameObject transitionObject)
-    {
-        transitionObject.transform.Translate(Time.deltaTime, 0, 0, opposite.transform);
+        activetransition = true;
     }
 }
