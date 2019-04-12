@@ -51,13 +51,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
+        if (hitInfo.tag != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null && hitInfo.tag != "Mur")
         {
+            
             ///Destroy(gameObject);
             if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
             {
                 hitInfo.gameObject.GetComponent<EnemyClass>().TakeDamages(20000);
             }
+
             gameObject.SetActive(false);
         }
     }
