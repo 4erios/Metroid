@@ -12,6 +12,8 @@ public class EnemyClass : MonoBehaviour
     [HideInInspector]
     public int damages;
 
+    public bool hurt = false; 
+
     //public LayerMask hurtPlayerLayer;
 
     //est virtual car peut être override
@@ -19,6 +21,8 @@ public class EnemyClass : MonoBehaviour
     {
         health -= damage;
         Debug.Log(health);
+        StartCoroutine(HurtCoroutine(0.3f));
+
     }
 
     public void Death()
@@ -37,6 +41,13 @@ public class EnemyClass : MonoBehaviour
             GetComponent<PlayerLifeSystem>().TakeDamage(damages);
             
         }
+    }
+
+    private IEnumerator HurtCoroutine (float time)
+    {
+        hurt = true;
+        yield return new WaitForSeconds(time);
+        hurt = false;
     }
 
 }
