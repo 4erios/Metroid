@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3275151335006963082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3275151335006963083}
+  - component: {fileID: 3275321555547616684}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3275151335006963083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275151335006963082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.50073, y: 7.3415327, z: 12.55127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3275321555547616684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275151335006963082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199b42972b341594785066f09e4e1497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 4a3a5acdd40ffad44a9fd9761c12f0cd, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: d7e4d62b62ea40f44aa9791b091e99a6, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BulletHit
+    clip: {fileID: 8300000, guid: 11693a8b45a6fb7409c5978fbc248bf3, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bonus
+    clip: {fileID: 8300000, guid: b89e1d2c7be9664438539ffad3470d32, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Menu
+    clip: {fileID: 8300000, guid: 5a4f70a39139c2640b5538d2bdec5267, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme1
+    clip: {fileID: 8300000, guid: 723d6da6abb43c743901b570193b4255, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme2
+    clip: {fileID: 8300000, guid: f65491353286b2a409a45259a701aeae, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme3
+    clip: {fileID: 8300000, guid: df87dda17c71f1c468ff272a5dc46f85, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme4
+    clip: {fileID: 8300000, guid: de8bf9776f894064b9da01d7cc79d4fc, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
