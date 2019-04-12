@@ -10,33 +10,33 @@ public class SkillLoot : MonoBehaviour
     private Sprite lootedSprite;
     [SerializeField]
     private string skillName;
+    private bool destroyed = false;
 
     private void Start()
     {
         if (skillName == "")
         {
-            Debug.LogError("Change the name by the Skill");
+            Debug.LogError("Complete the Skill Name on" + this.gameObject.name);
             Debug.Break();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && !destroyed)
         {
             player = collision.gameObject;
-            Skill();
-            SetupSprite();
+            StartCoroutine(Skill());
         }
     }
 
-    private void Skill()
+    IEnumerator Skill()
     {
-        //player.gameObject.GetComponent<PlayerLifeSystem>().unlockedSkill(skillName);
-    }
-
-    private void SetupSprite()
-    {
+        destroyed = true;
+        player.GetComponent<Freezer>().MisterFreeze();
+        player.GetComponent<SkillManager>().UnlockedSkill(skillName);
+        yield return new WaitForSeconds(3f);
+        player.GetComponent<Freezer>().Barbecue();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = lootedSprite;
     }
 }
