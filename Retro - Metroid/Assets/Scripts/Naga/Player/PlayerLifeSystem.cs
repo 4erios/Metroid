@@ -56,6 +56,7 @@ public class PlayerLifeSystem : DamageSystem
 
         if (stack < 0)
         {
+            GameObject.Find("Life Singleton").GetComponent<LifeSingleton>().Dead();
             Destroy(this.gameObject);
         }
     }
