@@ -11,6 +11,7 @@ public class PlayerLifeSystem : DamageSystem
     [HideInInspector]
     public int readStack;
     public int initLife = 30;
+    private bool canBeHit = true;
 
     private void Start()
     {
@@ -71,5 +72,24 @@ public class PlayerLifeSystem : DamageSystem
     public void Energy()
     {
         currentLife += 15;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (canBeHit)
+        {
+            Debug.Log("Oh non! " + damage + " dégats pour Samus");
+            currentLife -= damage;
+            StartCoroutine(Invincible(2f));
+        }
+    }
+
+    IEnumerator Invincible(float time)
+    {
+        canBeHit = false;
+
+        yield return new WaitForSeconds(time);
+
+        canBeHit = true;
     }
 }

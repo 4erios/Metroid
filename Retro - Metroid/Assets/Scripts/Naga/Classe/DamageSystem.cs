@@ -9,8 +9,8 @@ public class DamageSystem : MonoBehaviour
     protected int currentLife;
     public int readCurentLife;
 
-    public void TakeDamage(int damage)
+    /*public void TakeDamage(int damage)
     {
         currentLife -= damage;
-    }
+    }*/
 }
