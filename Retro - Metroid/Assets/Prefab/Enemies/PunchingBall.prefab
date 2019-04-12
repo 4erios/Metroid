@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  loot: {fileID: 8274554654529038201, guid: cf8449c90b9ce9a40afcb1aada96bbbf, type: 3}
+  damages: 0
   stats: {fileID: 11400000, guid: cd582409262935043a3dd439769b6d45, type: 2}
 --- !u!95 &187212459917169309
 Animator:

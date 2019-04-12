@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ESCSingleton : MonoBehaviour
 {
-    #region Démarrage
+    /*#region Démarrage
     public static ESCSingleton manager;
 
     private void Awake()
@@ -22,7 +22,7 @@ public class ESCSingleton : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
-    #endregion
+    #endregion*/
 
     public GameObject escapeMenu;
     public bool bpause;
@@ -46,12 +46,17 @@ public class ESCSingleton : MonoBehaviour
 
             if (Input.GetButtonDown("Start") || Input.GetButtonUp("Cancel"))
             {
-                escapeMenu.SetActive(false);
-                Pause();
-                Time.timeScale = 1;
+                Continue();
             }
 
         }
+    }
+
+    public void Continue()
+    {
+        escapeMenu.SetActive(false);
+        Pause();
+        Time.timeScale = 1;
     }
 
     public void Pause()

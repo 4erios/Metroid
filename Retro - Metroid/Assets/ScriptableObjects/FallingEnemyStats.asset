@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f104dd1e9a2e6b449819166b9f984526, type: 3}
   m_Name: FallingEnemyStats
   m_EditorClassIdentifier: 
-  enemyHealthPoints: 0
+  enemyHealthPoints: 20
   enemyDamages: 0
-  enemyAttackRange: 0
-  delayUntilExplosion: 0
-  rangeFromGround: 0
-  speedToGround: 0
+  layertoHurt:
+    serializedVersion: 2
+    m_Bits: 0
+  enemySpeed: 4
+  detectionRange: 0

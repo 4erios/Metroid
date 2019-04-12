@@ -5,4 +5,25 @@ using UnityEngine;
 public class FallingEnemyClass : EnemyClass
 {
     
+    public void GroundCheck()
+    {
+          
+    }
+
+    public void PlayerDetection()
+    {
+
+    }
+
+    public void FallingEnemyMovement()
+    {
+
+    }
+
+    public void Explosion()
+    {
+
+    }
+
+
 }

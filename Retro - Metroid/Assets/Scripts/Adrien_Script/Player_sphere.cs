@@ -15,7 +15,10 @@ public class Player_sphere : MonoBehaviour
     public Transform CeilingCheck;
     public float Radius = 5f;
     public LayerMask Ground;
-
+    [HideInInspector]
+    public bool haveSphereMode = false;
+    [HideInInspector]
+    public bool haveSphereBomb = false;
 
 
     void Start()
@@ -26,45 +29,48 @@ public class Player_sphere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Permet le passage en boule
-
-        if (!MoveJump.inverseGravity)
+        if (haveSphereMode)
         {
-            if (Input.GetAxis("Vertical") < -0.5f)
+            // Permet le passage en boule
+            if (!MoveJump.inverseGravity)
             {
-                anim.SetBool("Boule_State", true);
+                if (Input.GetAxis("Vertical") < -0.5f)
+                {
+                    anim.SetBool("Boule_State", true);
+                }
+
+                if (Input.GetAxis("Vertical") > 0.3f && anim.GetBool("Collision") == false)
+                {
+                    anim.SetTrigger("Haut");
+                    anim.SetBool("Boule_State", false);
+                }
             }
 
-            if (Input.GetAxis("Vertical") > 0.3f && anim.GetBool("Collision")==false )
+            else
             {
-                anim.SetTrigger("Haut");
-                anim.SetBool("Boule_State", false);
-            }
+                if (Input.GetAxis("Vertical") > 0.5f)
+                {
+                    anim.SetBool("Boule_State", true);
+                }
+
+                if (Input.GetAxis("Vertical") < -0.3f && anim.GetBool("Collision") == false)
+                {
+                    anim.SetTrigger("Haut");
+                    anim.SetBool("Boule_State", false);
+                }
         }
-        else
-        {
-            if (Input.GetAxis("Vertical") > 0.5f)
-            {
-                anim.SetBool("Boule_State", true);
-            }
-
-            if (Input.GetAxis("Vertical") < -0.3f && anim.GetBool("Collision") == false)
-            {
-                anim.SetTrigger("Haut");
-                anim.SetBool("Boule_State", false);
-            }
-        }
 
 
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             anim.SetTrigger("Saut");
             anim.SetBool("Boule_State", false);
-         
+
         }
+    }
 
         // Permet de poser les bombes
-        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire"))
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire") && haveSphereBomb)
         {
 
             Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
