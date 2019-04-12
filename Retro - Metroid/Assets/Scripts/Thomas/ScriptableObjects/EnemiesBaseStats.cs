@@ -7,9 +7,11 @@ public class EnemiesBaseStats : ScriptableObject
 {
     public float enemyHealthPoints;
 
-    public float enemyDamages;
-    public float enemyAttackRange;
+    public int enemyDamages;
 
-    public RuntimeAnimatorController enemyAnimator;
+    public LayerMask layertoHurt;
+
+    public float enemySpeed;
+
 
 }
