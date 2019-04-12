@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyClass : MonoBehaviour
 {
     public float health;
+    public GameObject loot; // Préfab de loot
 
     //public float attackRange;
     [HideInInspector]
@@ -22,7 +23,8 @@ public class EnemyClass : MonoBehaviour
 
     public void Death()
     {
-        //Placer le loot ici
+        GameObject objloot;
+        objloot = Instantiate(loot, this.gameObject.transform.position, Quaternion.identity) as GameObject;
         Debug.Log("dead!");
         Destroy(this.gameObject);
     }

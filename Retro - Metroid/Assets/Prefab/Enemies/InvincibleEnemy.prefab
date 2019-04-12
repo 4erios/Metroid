@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  loot: {fileID: 8274554654529038201, guid: cf8449c90b9ce9a40afcb1aada96bbbf, type: 3}
   damages: 0
   invincibleEnemyStats: {fileID: 11400000, guid: 7f4956084f4b5d84284472bf31e5ad7e,
     type: 2}
