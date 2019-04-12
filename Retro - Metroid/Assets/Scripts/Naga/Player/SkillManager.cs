@@ -25,7 +25,7 @@ public class SkillManager : MonoBehaviour
             this.gameObject.GetComponent<Player_sphere>().enabled = true;
 
         if (skillBombe)
-            this.gameObject.GetComponent<Player_sphere>().enabled = true;
+            this.gameObject.GetComponent<Player_sphere>().haveSphereBomb = true;
     }
 
     public void UnlockedSkill(string skillName)

@@ -15,7 +15,7 @@ public class Player_sphere : MonoBehaviour
     public Transform CeilingCheck;
     public float Radius = 5f;
     public LayerMask Ground;
-
+    public bool haveSphereBomb = false;
 
 
     void Start()
@@ -64,7 +64,7 @@ public class Player_sphere : MonoBehaviour
         }
 
         // Permet de poser les bombes
-        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire"))
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire") && haveSphereBomb)
         {
 
             Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
