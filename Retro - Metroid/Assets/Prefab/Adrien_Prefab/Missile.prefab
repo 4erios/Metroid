@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 535513837194477092}
   - component: {fileID: 535513837194477093}
   - component: {fileID: 535513837194477094}
+  - component: {fileID: 5808386279136762252}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Projectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,3 +136,23 @@ MonoBehaviour:
   rb: {fileID: 535513837194477092}
   damage: 40
   impactEffect: {fileID: 0}
+  duration: 0.1
+--- !u!95 &5808386279136762252
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535513837194477089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36093cb6c37c90444bc7821b6645fa09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -6,16 +6,16 @@ public class Player_sphere : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public BoxCollider2D samus;
-    public BoxCollider2D boule;
+
     public bool collision;
-    Animator animator;
-    public bool bouleState = false;
+    Animator anim;
     public GameObject bombePrefab;
-    public Transform bombe;
+    public Transform bombePosition;
+    public GameObject ExplosionPrefab;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,46 +23,51 @@ public class Player_sphere : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") < -0.1f)
         {
-            animator.SetTrigger("Bas");
+            anim.SetBool("Boule_State", true);
             Debug.Log("Je suis en boule");
-            bouleState = true;
+    
         }
 
 
         if (Input.GetAxis("Vertical") > 0.1f)
         {
-            animator.SetTrigger("Haut");
+            anim.SetTrigger("Haut");
+            anim.SetBool("Boule_State", false);
             Debug.Log("Je me relève");
         }
 
 
         if(Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("Jump");
+            anim.SetTrigger("Saut");
+            anim.SetBool("Boule_State", false);
             Debug.Log("Je voulais sauter");
         }
 
-        if (bouleState == true && Input.GetButtonDown("Fire")) {
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
 
-            Instantiate(bombePrefab, bombe.position, bombe.rotation);
+            Debug.Log("JE CHIE UNE BOMBE");
+            Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
+            //StartCoroutine(TimeBeforeExplosion());
+
+         
 
         }
-        /*if (((Input.GetAxis("Vertical") > 0.1f) || Input.GetButtonDown("Jump")) && !collision)
-            {
-
-            boule.isTrigger = true;
-            samus.isTrigger = false;
-            Debug.Log("Je redeviens Samus");
-
-        }*/
-
-
+    
 
     }
 
     private void OnTriggerStay2D(Collider2D samus)
     {
-        animator.SetBool("Collision", true);
+        anim.SetBool("Collision", true);
         Debug.Log("JE TOUCHE");
+    }
+
+
+    IEnumerator TimeBeforeExplosion()
+    {
+
+        yield return new WaitForSeconds(1);
+        Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
     }
 }

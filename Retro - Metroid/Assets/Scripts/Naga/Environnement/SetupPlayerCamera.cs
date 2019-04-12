@@ -12,5 +12,7 @@ public class SetupPlayerCamera : MonoBehaviour
     {
         if(this.gameObject.GetComponent<CinemachineVirtualCamera>().Follow == null)
             this.gameObject.GetComponent<CinemachineVirtualCamera>().Follow = Camera.GetComponent<CameraScript>().player;
+
+        //GameObject.Find("Camera").GetComponent<CameraScript>().resetCam();
     }
 }
