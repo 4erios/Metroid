@@ -14,7 +14,7 @@ public class UIPlayerScript : MonoBehaviour
 
     void Update()
     {
-        //curentLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLifeSystem>().readCurentLife;
+        curentLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLifeSystem>().readCurentLife;
         energyText.GetComponent<Text>().text = curentLife.ToString();
         // missileText.GetComponent<Text>().text = currentMissile.ToString();
 
@@ -23,7 +23,7 @@ public class UIPlayerScript : MonoBehaviour
 
     private void AfficherStacks()
     {
-        //stack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLifeSystem>().readStack;
+        stack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLifeSystem>().readStack;
 
         if (stack != 0)
         {

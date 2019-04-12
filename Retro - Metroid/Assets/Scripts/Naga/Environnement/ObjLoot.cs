@@ -12,8 +12,6 @@ public class ObjLoot : MonoBehaviour
     private bool energy = false;
     [SerializeField]
     private Sprite energySprite;
-    [SerializeField]
-    private bool skill = false;
     private GameObject player;
     private int selection; // Chiffre au hasard pour le loot
 
@@ -47,8 +45,6 @@ public class ObjLoot : MonoBehaviour
             countBool++;
         if (energy)
             countBool++;
-        if (skill)
-            countBool++;
 
         if(countBool != 1)
             Debug.LogError("<b>Trop d'options actives</b>"); // Trop de bool sont true, ce n'est pas normal tricheur!
@@ -68,9 +64,7 @@ public class ObjLoot : MonoBehaviour
 
     private void Affectation()
     {
-        if (skill)
-            Skill();
-        else if (energy)
+        if (energy)
             Energy();
         else if (missile)
             Missile();
@@ -84,11 +78,6 @@ public class ObjLoot : MonoBehaviour
     private void Energy()
     {
         player.gameObject.GetComponent<PlayerLifeSystem>().Energy();
-    }
-
-    private void Skill()
-    {
-        //player.gameObject.GetComponent<PlayerLifeSystem>().unlockedSkill(this.gameObject.name);
     }
 
     private void SetupSprite()
