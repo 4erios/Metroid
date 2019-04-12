@@ -1,10 +1,15 @@
 fileFormatVersion: 2
-guid: cf9027e86bccd964f80c6a48da7bc724
+guid: bfc6dfaeb158192439f152787106239a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - loot: {fileID: 8274554654529038201, guid: cf8449c90b9ce9a40afcb1aada96bbbf, type: 3}
+  - invincibleEnemyStats: {instanceID: 0}
+  - trajectPointA: {instanceID: 0}
+  - trajectPointB: {instanceID: 0}
+  - spriteRenderer: {instanceID: 0}
+  - enemyTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
