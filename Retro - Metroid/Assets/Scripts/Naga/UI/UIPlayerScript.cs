@@ -7,8 +7,10 @@ public class UIPlayerScript : MonoBehaviour
 {
     public GameObject energyText;
     private int curentLife;
-    // public GameObject missileText;
-    // private int currentMissile;
+    [SerializeField]
+    private GameObject missileUI;
+    public GameObject missileText;
+    private int currentMissile;
     public GameObject[] stacks;
     private int stack;
 
@@ -16,7 +18,16 @@ public class UIPlayerScript : MonoBehaviour
     {
         curentLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLifeSystem>().readCurentLife;
         energyText.GetComponent<Text>().text = curentLife.ToString();
-        // missileText.GetComponent<Text>().text = currentMissile.ToString();
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Chara_Controller_Missile>().enabled == true)
+        {
+            missileUI.SetActive(true);
+            currentMissile = GameObject.FindGameObjectWithTag("Player").GetComponent<Chara_Controller_Missile>().missileNumber;
+            missileText.GetComponent<Text>().text = currentMissile.ToString();
+        }
+
+        else
+            missileUI.SetActive(false);
 
         AfficherStacks();
     }

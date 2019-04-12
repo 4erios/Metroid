@@ -17,6 +17,8 @@ public class ObjLoot : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         LootSelection();
 
         if (selection == 6 || selection == 5)
@@ -26,7 +28,9 @@ public class ObjLoot : MonoBehaviour
 
         else if (selection == 4)
         {
-            missile = true;
+            if (player.GetComponent<Chara_Controller_Missile>().enabled == true)
+                missile = true;
+            else Destroy(gameObject);
         }
 
         else
@@ -72,7 +76,7 @@ public class ObjLoot : MonoBehaviour
 
     private void Missile()
     {
-        //player.gameObject.GetComponent<PlayerLifeSystem>().missile++;
+        player.gameObject.GetComponent<Chara_Controller_Missile>().missileNumber += 5;
     }
 
     private void Energy()
