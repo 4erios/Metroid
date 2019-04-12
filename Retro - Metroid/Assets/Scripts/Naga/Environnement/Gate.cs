@@ -13,6 +13,10 @@ public class Gate : MonoBehaviour
     private GameObject cam;
     [SerializeField]
     private GameObject transitionCam;
+    [SerializeField]
+    private Sprite open;
+    [SerializeField]
+    private Sprite close;
 
     private void Start()
     {
@@ -61,6 +65,22 @@ public class Gate : MonoBehaviour
         for (int i = 0; i < gate.Length; i++)
         {
             gate[i].GetComponent<Animator>().SetBool("Gate Interact", bGateIsOpen);
+        }
+
+        if (bGateIsOpen)
+        {
+            for (int i = 0; i < gate.Length; i++)
+            {
+                gate[i].GetComponent<SpriteRenderer>().sprite = open;
+            }
+        }
+
+        else
+        {
+            for (int i = 0; i < gate.Length; i++)
+            {
+                gate[i].GetComponent<SpriteRenderer>().sprite = close;
+            }
         }
     }
 
