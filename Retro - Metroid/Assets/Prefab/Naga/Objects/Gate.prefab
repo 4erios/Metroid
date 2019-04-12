@@ -377,6 +377,8 @@ MonoBehaviour:
   - {fileID: 5464365013364128008}
   - {fileID: 325408841734518199}
   transitionCam: {fileID: 40246529}
+  open: {fileID: 21300000, guid: 9a18296cda8db574d831713e2c106757, type: 3}
+  close: {fileID: 21300000, guid: 4e64c2ba6d6267f4dae3c4684705380f, type: 3}
 --- !u!1 &5464365012757212168
 GameObject:
   m_ObjectHideFlags: 0
