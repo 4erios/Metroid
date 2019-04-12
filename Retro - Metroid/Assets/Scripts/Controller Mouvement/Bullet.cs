@@ -18,12 +18,6 @@ public class Bullet : MonoBehaviour
 
     public float distanceOfShoot = 10;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        
-    }
-
     public void useUpVelocity()
     {
         ShootUp = true;
@@ -34,19 +28,18 @@ public class Bullet : MonoBehaviour
         if (ShootUp)
         {
             rb.velocity = transform.up * speed;
+            transform.localRotation  = Quaternion.Euler(new Vector3(0, 0, 90));
         }
         else
         {
             rb.velocity = transform.right * speed;
+            transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         ShootUp = false;
 
         startPosition = transform.position;
     }
         
-        
-
-    // Update is called once per frame
     void Update()
     {
         ActualPosition = transform.position;
@@ -58,14 +51,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.name);
-        /*Ennemy ennemy = hitInfo.GetComponment<Ennemy>();
-         if(ennemy != null)
-         {
-            ennemy.TakeDamage();
-         }
-         */
-        if (hitInfo.name != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
+        if (hitInfo.tag != "Player" && hitInfo.gameObject.GetComponent<Bullet>() == null)
         {
             ///Destroy(gameObject);
             if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
@@ -78,16 +64,3 @@ public class Bullet : MonoBehaviour
 }
 
     //https://www.raywenderlich.com/847-object-pooling-in-unity
-
-    /*
-     * mainCamera = Camera.main;
-
-        widthThresold = new Vector2(Screen.width * -1.04f, Screen.width * 1.04f);
-        heightThresold = new Vector2(Screen.height * -1.04f, Screen.height * 1.04f);
-        
-     Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
-        if (screenPosition.x < widthThresold.x || screenPosition.x > widthThresold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
-        {
-            ///Destroy(gameObject);
-            gameObject.SetActive(false);
-        }*/

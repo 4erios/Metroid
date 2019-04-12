@@ -12,6 +12,11 @@ public class Player_sphere : MonoBehaviour
     public GameObject bombePrefab;
     public Transform bombePosition;
     public GameObject ExplosionPrefab;
+    public Transform CeilingCheck;
+    public float Radius = 5f;
+    public LayerMask Ground;
+
+
 
     void Start()
     {
@@ -21,19 +26,33 @@ public class Player_sphere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Vertical") < -0.1f)
+        // Permet le passage en boule
+
+        if (!MoveJump.inverseGravity)
         {
-            anim.SetBool("Boule_State", true);
-            Debug.Log("Je suis en boule");
-    
+            if (Input.GetAxis("Vertical") < -0.5f)
+            {
+                anim.SetBool("Boule_State", true);
+            }
+
+            if (Input.GetAxis("Vertical") > 0.3f && anim.GetBool("Collision")==false )
+            {
+                anim.SetTrigger("Haut");
+                anim.SetBool("Boule_State", false);
+            }
         }
-
-
-        if (Input.GetAxis("Vertical") > 0.1f)
+        else
         {
-            anim.SetTrigger("Haut");
-            anim.SetBool("Boule_State", false);
-            Debug.Log("Je me relève");
+            if (Input.GetAxis("Vertical") > 0.5f)
+            {
+                anim.SetBool("Boule_State", true);
+            }
+
+            if (Input.GetAxis("Vertical") < -0.3f && anim.GetBool("Collision") == false)
+            {
+                anim.SetTrigger("Haut");
+                anim.SetBool("Boule_State", false);
+            }
         }
 
 
@@ -41,33 +60,53 @@ public class Player_sphere : MonoBehaviour
         {
             anim.SetTrigger("Saut");
             anim.SetBool("Boule_State", false);
-            Debug.Log("Je voulais sauter");
-        }
-
-        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire")) {
-
-            Debug.Log("JE CHIE UNE BOMBE");
-            Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
-            //StartCoroutine(TimeBeforeExplosion());
-
          
+        }
+
+        // Permet de poser les bombes
+        if (anim.GetBool("Boule_State") == true && Input.GetButtonDown("Fire"))
+        {
+
+            Instantiate(bombePrefab, bombePosition.position, bombePosition.rotation);
+        }
+
+        // Permet de bloquer la boule si elle détecte des collisions
+        /*if (anim.GetBool("Boule_State") && anim.GetBool("Collision"))
+        {
+
+            anim.SetBool("Boule State", true);
+
+
+        }*/
+
+        // Permet de bloquer la boule si elle détecte des collisions
+        if (anim.GetBool("Boule_State") == true)
+        {
+            /*Collider2D[] colliders = Physics2D.OverlapCircleAll(CeilingCheck.position, Radius, Ground);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject && colliders[i].gameObject != null)
+                {
+                }
+            }*/
+
+            if (Physics2D.OverlapCircle(CeilingCheck.position, Radius, Ground))
+            {
+                anim.SetBool("Collision", true);
+                Debug.Log("JE TOUCHE");
+            }
+            else
+            {
+                anim.SetBool("Collision", false);
+            }
+
+            // Permet d'empêcher à la boule de sauter
+            anim.SetBool("IsJumping", false);
 
         }
-    
 
     }
 
-    private void OnTriggerStay2D(Collider2D samus)
-    {
-        anim.SetBool("Collision", true);
-        Debug.Log("JE TOUCHE");
-    }
 
-
-    IEnumerator TimeBeforeExplosion()
-    {
-
-        yield return new WaitForSeconds(1);
-        Instantiate(ExplosionPrefab, bombePosition.position, bombePosition.rotation);
-    }
+   
 }

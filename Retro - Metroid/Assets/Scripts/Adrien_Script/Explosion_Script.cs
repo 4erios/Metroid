@@ -6,27 +6,30 @@ public class Explosion_Script : MonoBehaviour
 {
     
      Animator AnimExplo;
+     public bool Destruct;
     // Start is called before the first frame update
     void Start()
     {
         AnimExplo = GetComponent<Animator>();
+        Destruct = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        StartCoroutine(TimeBeforeDestruction());
-
-    }
-
-    IEnumerator TimeBeforeDestruction()
-    {
+        // Variable Destruct appelée dans l'Animator
         AnimExplo.SetTrigger("Explosion");
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
+
+        if (Destruct == true) {
+
+            Destroy(gameObject);
+
+        }
+
+   }
+
+   
 
        
     }
-}
+

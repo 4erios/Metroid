@@ -298,6 +298,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 262638436, guid: d9bc18341b28c7f4a8abc4557f9e28ad, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b9886102141df1244a9ef63331ef20da, type: 2}
+    - target: {fileID: 262638435, guid: d9bc18341b28c7f4a8abc4557f9e28ad, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.022587636
+      objectReference: {fileID: 0}
+    - target: {fileID: 262638435, guid: d9bc18341b28c7f4a8abc4557f9e28ad, type: 3}
+      propertyPath: m_Size.x
+      value: 0.12924941
+      objectReference: {fileID: 0}
+    - target: {fileID: 262638435, guid: d9bc18341b28c7f4a8abc4557f9e28ad, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 262638435, guid: d9bc18341b28c7f4a8abc4557f9e28ad, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 4445114010193874289, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
         type: 3}
       propertyPath: ExplosionPrefab
@@ -309,10 +329,35 @@ PrefabInstance:
       propertyPath: bombePosition
       value: 
       objectReference: {fileID: 1900411292}
+    - target: {fileID: 4445114010193874289, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+        type: 3}
+      propertyPath: CeilingCheck
+      value: 
+      objectReference: {fileID: 689314544}
+    - target: {fileID: 4445114010193874289, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+        type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445114010193874289, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+        type: 3}
+      propertyPath: Ground.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7897419149941101605, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897419149941101605, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+        type: 3}
+      propertyPath: missileNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897419149941101605, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+        type: 3}
+      propertyPath: weaponRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8090095604403578425, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
         type: 3}
@@ -660,6 +705,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &689314544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2739914952154055831, guid: d9bc18341b28c7f4a8abc4557f9e28ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 263557076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &725468866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,7 +1035,7 @@ PrefabInstance:
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 135712.89
+      value: 361242.9
       objectReference: {fileID: 0}
     - target: {fileID: 7926951881020108428, guid: 9eadc3d82b842d54aaa6bbc2967553bc,
         type: 3}
@@ -1061,6 +1112,11 @@ MonoBehaviour:
     type: 3}
   bombePosition: {fileID: 0}
   ExplosionPrefab: {fileID: 0}
+  CeilingCheck: {fileID: 0}
+  Radius: 5
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1716444277
 GameObject:
   m_ObjectHideFlags: 0

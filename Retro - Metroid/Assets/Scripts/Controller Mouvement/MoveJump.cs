@@ -37,16 +37,20 @@ public class MoveJump : MonoBehaviour
     private bool increaseJump = false;
 
     private bool wasGrounded;
+    private bool canChangeGravity;
+
+    public colorChangeScript scriptChangeColor;
 
 
     private IEnumerator coroutine;
 
-    [SerializeField] private bool inverseGravity = false;
+    [SerializeField]static public bool inverseGravity { get; private set; }
 
 
     private void Awake()
     {
         Debug.Log(Physics.gravity);
+        inverseGravity = false;
     }
 
     private void Start()
@@ -59,6 +63,7 @@ public class MoveJump : MonoBehaviour
     private void Update()
     {
         jumpCatch();
+        GravityChange();
         //Debug.Log("VELO" + rb.velocity);
         //Debug.Log("Ok" + Vector2.right * axeHorizontal * moveSpeed * Time.fixedDeltaTime);
     }
@@ -69,7 +74,7 @@ public class MoveJump : MonoBehaviour
         
         Move();
         Jump();
-        //GravityChange();
+        
 
         ThereGoesGravity();
     }
@@ -105,16 +110,21 @@ public class MoveJump : MonoBehaviour
     /// </summary>
     void jumpCatch()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == false)
+        
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-
             //rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            rb.velocity = new Vector2 (rb.velocity.x, jumpForce );
+            if (!inverseGravity)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+            else
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
+            }
             jumpTimeCounter = jumpTime;
 
             animator.SetBool("IsJumping", true);
-            Debug.Log("SAUTE SAUTE SAUTE");
-          
 
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = WaitToIncreaseJump(timeMinimumBeforeIncreaseJump);
@@ -122,26 +132,29 @@ public class MoveJump : MonoBehaviour
         }
         if (Input.GetButton("Jump"))
         {
-            
-
             if (jumpTimeCounter > 0 && increaseJump)
             {
-                rb.velocity = Vector2.up * jumpNextForce;
+                if (!inverseGravity)
+                {
+                    rb.velocity = Vector2.up * jumpNextForce;
+                }
+                else
+                {
+                    rb.velocity = Vector2.down * jumpNextForce;
+                }
                 jumpTimeCounter -= Time.fixedDeltaTime;
+                animator.SetBool("Boule State", false);
             }
-            Debug.Log("jump");
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             jumpTimeCounter = 0;
-           
-            
 
-
-            if (coroutine !=null) StopCoroutine(coroutine);
+            if (coroutine != null) StopCoroutine(coroutine);
             increaseJump = false;
         }
+        
     }
 
     private IEnumerator WaitToIncreaseJump (float time)
@@ -157,33 +170,44 @@ public class MoveJump : MonoBehaviour
         {
             
 
-            Debug.Log("GO");
-
             //Debug.Log("velocity " + rb.velocity);
             //Debug.Log("velocitYY " + rb.velocity.y);
 
             if (rb.velocity.y < 0)
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
-                Debug.Log("TEST000");
+                
                 
             }
             
         }
         else
-        { 
-            if (Input.GetButtonDown("Jump") && isGrounded && inverseGravity == true)
+        {
+            if (rb.velocity.y < 0)
             {
-                rb.AddForce(new Vector2(0, -jumpForce));
+                rb.velocity += Vector2.down * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
             }
         }
     }
 
     void GravityChange()
     {
-        if (Input.GetButtonDown("Gravity_Belt"))
+        if (Input.GetButtonDown("Gravity_Belt") && canChangeGravity)
         {
             inverseGravity = !inverseGravity;
+            transform.Rotate(180f, 0, 0);
+            
+            canChangeGravity = false;
+
+            if (inverseGravity == false)
+            {
+                scriptChangeColor.NormalGravity();
+                Debug.Log("Gravity change");
+            }
+            else
+            {
+                scriptChangeColor.InverseGravity();
+            }
         }
     }
 
@@ -193,8 +217,8 @@ public class MoveJump : MonoBehaviour
 
         isGrounded = false;
 
-        if (!inverseGravity)
-        {
+        /*if (!inverseGravity)
+        {*/
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundRadius, layerGround);
             for (int i = 0; i < colliders.Length; i++)
             {
@@ -208,10 +232,12 @@ public class MoveJump : MonoBehaviour
 
                     isGrounded = true;
 
-                    Debug.Log("player is on ground");
+                    canChangeGravity = true;
+
+                    //Debug.Log("player is on ground");
                 }
             }
-        }
+        /*}
         else
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(ceilCheck.position, groundRadius, layerGround);
@@ -224,7 +250,7 @@ public class MoveJump : MonoBehaviour
                 }
             }
             Debug.Log("ERROR, ABORT MISSION IMEDIATLY, SAMUS!");
-        }
+        }*/
     }
 
     void ThereGoesGravity()
