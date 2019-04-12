@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: InvincibleEnemyStats
   m_EditorClassIdentifier: 
   enemyHealthPoints: 0
-  enemyDamages: 0
+  enemyDamages: 5
   layertoHurt:
     serializedVersion: 2
     m_Bits: 0
