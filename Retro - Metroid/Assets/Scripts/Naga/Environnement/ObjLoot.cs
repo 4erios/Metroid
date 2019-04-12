@@ -12,13 +12,13 @@ public class ObjLoot : MonoBehaviour
     private bool energy = false;
     [SerializeField]
     private Sprite energySprite;
-    [SerializeField]
-    private bool skill = false;
     private GameObject player;
     private int selection; // Chiffre au hasard pour le loot
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         LootSelection();
 
         if (selection == 6 || selection == 5)
@@ -28,7 +28,9 @@ public class ObjLoot : MonoBehaviour
 
         else if (selection == 4)
         {
-            missile = true;
+            if (player.GetComponent<Chara_Controller_Missile>().enabled == true)
+                missile = true;
+            else Destroy(gameObject);
         }
 
         else
@@ -46,8 +48,6 @@ public class ObjLoot : MonoBehaviour
         if (missile)
             countBool++;
         if (energy)
-            countBool++;
-        if (skill)
             countBool++;
 
         if(countBool != 1)
@@ -68,9 +68,7 @@ public class ObjLoot : MonoBehaviour
 
     private void Affectation()
     {
-        if (skill)
-            Skill();
-        else if (energy)
+        if (energy)
             Energy();
         else if (missile)
             Missile();
@@ -78,17 +76,12 @@ public class ObjLoot : MonoBehaviour
 
     private void Missile()
     {
-        //player.gameObject.GetComponent<PlayerLifeSystem>().missile++;
+        player.gameObject.GetComponent<Chara_Controller_Missile>().missileNumber += 5;
     }
 
     private void Energy()
     {
         player.gameObject.GetComponent<PlayerLifeSystem>().Energy();
-    }
-
-    private void Skill()
-    {
-        //player.gameObject.GetComponent<PlayerLifeSystem>().unlockedSkill(this.gameObject.name);
     }
 
     private void SetupSprite()

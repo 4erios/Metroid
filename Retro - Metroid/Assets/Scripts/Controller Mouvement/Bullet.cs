@@ -28,10 +28,12 @@ public class Bullet : MonoBehaviour
         if (ShootUp)
         {
             rb.velocity = transform.up * speed;
+            transform.localRotation  = Quaternion.Euler(new Vector3(0, 0, 90));
         }
         else
         {
             rb.velocity = transform.right * speed;
+            transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         ShootUp = false;
 

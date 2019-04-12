@@ -40,6 +40,8 @@ public class MoveJump : MonoBehaviour
     private bool canChangeGravity;
 
     public colorChangeScript scriptChangeColor;
+    [HideInInspector]
+    public bool haveGravityBelt = false;
 
 
     private IEnumerator coroutine;
@@ -192,7 +194,7 @@ public class MoveJump : MonoBehaviour
 
     void GravityChange()
     {
-        if (Input.GetButtonDown("Gravity_Belt") && canChangeGravity)
+        if (Input.GetButtonDown("Gravity_Belt") && canChangeGravity && haveGravityBelt )
         {
             inverseGravity = !inverseGravity;
             transform.Rotate(180f, 0, 0);
