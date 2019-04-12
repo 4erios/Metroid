@@ -57,7 +57,7 @@ public class PlayerLifeSystem : DamageSystem
 
         if (stack < 0)
         {
-            FindObjectOfType<Audio_Mangaer>().Play("PlayerDeath");
+            FindObjectOfType<Audio_Manager>().Play("PlayerDeath");
             GameObject.Find("Life Singleton").GetComponent<LifeSingleton>().Dead();
 
             Destroy(this.gameObject);

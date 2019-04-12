@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour
             if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
             {
                 hitInfo.gameObject.GetComponent<EnemyClass>().TakeDamages(20000);
-                FindObjectOfType<Audio_Mangaer>().Play("BulletHit");
+                FindObjectOfType<Audio_Manager>().Play("BulletHit");
             }
 
             gameObject.SetActive(false);

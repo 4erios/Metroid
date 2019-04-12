@@ -2,12 +2,12 @@
 using UnityEngine.Audio;
 using UnityEngine;
 
-public class Audio_Mangaer : MonoBehaviour
+public class Audio_Manager : MonoBehaviour
 {
 
     public Sound[] sounds;
 
-    public static Audio_Mangaer instance;
+    public static Audio_Manager instance;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,7 +36,7 @@ public class Audio_Mangaer : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<Audio_Mangaer>().Play("Theme1");
+        FindObjectOfType<Audio_Manager>().Play("Theme1");
     }
 
     public void Play (string name)
