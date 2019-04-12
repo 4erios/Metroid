@@ -7,17 +7,17 @@ public class InvincibleEnemyStateManager : EnemyClass
     public EnemiesBaseStats invincibleEnemyStats;
 
     private float speed;
-    public Transform trajectPointA;
-    public Transform trajectPointB;
 
+    public Transform[] nbwaypoints;
+
+    int current = 0;
+    float WPradius = 1;
     //private float damages;
     //to deal damages : PlayerLifeSystem.TakeDamage(damage)
 
     public SpriteRenderer spriteRenderer;
 
     public Transform enemyTransform;
-
-    
 
     // Start is called before the first frame update
     void Start()
@@ -29,33 +29,31 @@ public class InvincibleEnemyStateManager : EnemyClass
 
         spriteRenderer.flipX = true;
 
-        MoveRight();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemyTransform.position.x == trajectPointA.position.x)
-        {
-            MoveLeft();
-            FlipSprite();
-        }
-
-        else if (enemyTransform.position.x == trajectPointB.position.x)
-        {
-            MoveRight();
-            FlipSprite();
-        }
+        Patrol();
     }
 
-    public void MoveRight()
-    {
-        enemyTransform.position = Vector2.Lerp(trajectPointA.position, trajectPointB.position, speed);
-    }
+    
 
-    public void MoveLeft()
+    void Patrol()
     {
-        enemyTransform.position = Vector2.Lerp(trajectPointB.position, trajectPointA.position, speed);
+        if(Vector2.Distance(nbwaypoints[current].transform.position, transform.position) < WPradius)
+        {
+            current++;
+            FlipSprite();
+
+            if(current >= nbwaypoints.Length)
+            {
+                current = 0;
+                FlipSprite();
+            }
+        }
+        transform.position = Vector2.MoveTowards(transform.position, nbwaypoints[current].transform.position, Time.deltaTime * speed);
     }
 
     public void FlipSprite()

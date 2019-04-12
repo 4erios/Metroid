@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: InvincibleEnemyStats
   m_EditorClassIdentifier: 
   enemyHealthPoints: 0
-  enemyDamages: 3
+  enemyDamages: 0
   layertoHurt:
     serializedVersion: 2
     m_Bits: 0
-  trajectPointA: {fileID: 0}
-  trajectPointB: {fileID: 0}
-  enemySpeed: 0
+  enemySpeed: 2
