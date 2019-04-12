@@ -29,11 +29,6 @@ public class ESCSingleton : MonoBehaviour
 
     private void Update()
     {
-        if (escapeMenu == null)
-        {
-            escapeMenu = GameObject.FindGameObjectWithTag("Menu");
-        }
-
         if (!escapeMenu.activeInHierarchy)
         {
 
