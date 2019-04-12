@@ -8,8 +8,10 @@ public class EnemiesBaseStats : ScriptableObject
     public float enemyHealthPoints;
 
     public float enemyDamages;
-    public float enemyAttackRange;
 
-    
+    public LayerMask layertoHurt;
+
+    public float enemySpeed;
+
 
 }

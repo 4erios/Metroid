@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingEnemyStateManager : EnemyClass
+public class FallingEnemyStateManager : FallingEnemyClass
 {
 
     public FallingEnemyStats fallingEnemyStats;
