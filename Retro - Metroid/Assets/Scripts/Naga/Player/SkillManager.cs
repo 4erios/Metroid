@@ -16,7 +16,7 @@ public class SkillManager : MonoBehaviour
     void Update()
     {
         if (skillGravity)
-            this.gameObject.GetComponent<MoveJump>().enabled = true;
+            this.gameObject.GetComponent<MoveJump>().haveGravityBelt = true;
 
         if (skillMissile)
             this.gameObject.GetComponent<Chara_Controller_Missile>().enabled = true;
