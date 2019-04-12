@@ -35,7 +35,7 @@ public class EnemyClass : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.tag == "Player")
         {
             //to deal damages : PlayerLifeSystem.TakeDamage(damages)
             collision.GetComponent<PlayerLifeSystem>().TakeDamage(damages);
