@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    private string areaType; // H ou V
+    public string areaType; // H ou V
     public Transform player; // Le joueur
     public GameObject cameraH; // Camera Horizontal
     public GameObject cameraV; // Camera Vertical
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

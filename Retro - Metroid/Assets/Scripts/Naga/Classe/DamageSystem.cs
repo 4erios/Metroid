@@ -6,7 +6,6 @@ public class DamageSystem : MonoBehaviour
 {
     //Life
     protected int lifeMax;
-    [SerializeField]
     protected int currentLife;
     public int readCurentLife;
 
