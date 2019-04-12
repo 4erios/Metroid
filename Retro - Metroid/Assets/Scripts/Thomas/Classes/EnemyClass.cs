@@ -33,12 +33,12 @@ public class EnemyClass : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision2D)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision2D.gameObject.name == "MyGameObjectTag")
+        if(collision.gameObject.tag == "Player")
         {
             //to deal damages : PlayerLifeSystem.TakeDamage(damages)
-            GetComponent<PlayerLifeSystem>().TakeDamage(damages);
+            collision.GetComponent<PlayerLifeSystem>().TakeDamage(damages);
             
         }
     }
