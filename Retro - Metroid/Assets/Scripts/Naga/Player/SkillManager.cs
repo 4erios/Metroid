@@ -67,6 +67,8 @@ public class SkillManager : MonoBehaviour
 
     public void UnlockedSkill(string skillName)
     {
+        FindObjectOfType<Audio_Mangaer>().Play("Bonus");
+
         if (skillName == "Gravity" && !skillGravity)
             skillGravity = true;
 

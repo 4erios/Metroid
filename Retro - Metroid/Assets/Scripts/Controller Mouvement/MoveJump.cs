@@ -115,6 +115,8 @@ public class MoveJump : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            FindObjectOfType<Audio_Mangaer>().Play("Jump");
+
             //rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             if (!inverseGravity)
             {

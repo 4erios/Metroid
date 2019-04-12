@@ -22,7 +22,7 @@ public class MissileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag != "Player")
+        if (hitInfo.tag != "Player" && hitInfo.tag != "Mur")
         {
             if (hitInfo.gameObject.GetComponent<EnemyClass>() != null)
             {
