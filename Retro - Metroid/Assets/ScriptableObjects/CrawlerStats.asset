@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bb7ff98138e3c4e8bde675e7c8b466, type: 3}
   m_Name: CrawlerStats
   m_EditorClassIdentifier: 
-  enemyHealthPoints: 1000000
+  enemyHealthPoints: 100000
   enemyDamages: 5
   layertoHurt:
     serializedVersion: 2

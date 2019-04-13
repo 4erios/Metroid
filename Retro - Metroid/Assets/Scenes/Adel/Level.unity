@@ -15862,6 +15862,16 @@ PrefabInstance:
       propertyPath: nbwaypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6838299423134256202, guid: 944ef426bf8cb3b479c78fee042f5e2b,
+        type: 3}
+      propertyPath: nbwaypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1398925975}
+    - target: {fileID: 6838299423134256202, guid: 944ef426bf8cb3b479c78fee042f5e2b,
+        type: 3}
+      propertyPath: nbwaypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1398925974}
     - target: {fileID: 8802538055200363392, guid: 944ef426bf8cb3b479c78fee042f5e2b,
         type: 3}
       propertyPath: m_IsActive
@@ -15887,6 +15897,18 @@ PrefabInstance:
 --- !u!4 &1398925973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5807034113034899528, guid: 944ef426bf8cb3b479c78fee042f5e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1398925972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1398925974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5451357282998090051, guid: 944ef426bf8cb3b479c78fee042f5e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1398925972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1398925975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1904713199208514189, guid: 944ef426bf8cb3b479c78fee042f5e2b,
     type: 3}
   m_PrefabInstance: {fileID: 1398925972}
   m_PrefabAsset: {fileID: 0}
