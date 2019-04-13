@@ -16,5 +16,5 @@ MonoBehaviour:
   enemyDamages: 5
   layertoHurt:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   enemySpeed: 1

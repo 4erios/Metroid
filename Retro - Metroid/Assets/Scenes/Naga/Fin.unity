@@ -1037,8 +1037,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulation Samus, You have securise the spaceship Apha. We will deal
-    with the rest of it.
+  m_Text: Congratulations Samus, you have securised the spaceship Alpha. We will deal
+    with the rest of it now.
 --- !u!222 &1865517160
 CanvasRenderer:
   m_ObjectHideFlags: 0
